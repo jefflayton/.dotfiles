@@ -5,14 +5,23 @@
 # Whitelist specific configs
 !/.gitignore
 !/.jjconfig.toml
+!/.nvmrc
 
 !/.eslintrc.json
 !/.prettierrc
 
-!/.config/nvim/
-!/.config/ghostty/
+!/.config/nvim
+!/.config/nvim/**
+
+!/.config/ghostty
+!/.config/ghostty/**
+
+!/.config/ripgrep
+!/.config/ripgrep/**
+
+!/.config/ohmyposh
+!/.config/ohmyposh/**
 
 !/.config/fish/config.fish
 !/.config/fish/functions/fish_user_key_bindings.fish
 
-!/.config/ripgrep
