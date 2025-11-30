@@ -1,0 +1,18 @@
+# Ignore everything by default
+/*
+.DS_Store
+
+# Whitelist specific configs
+!/.gitignore
+!/.jjconfig.toml
+
+!/.eslintrc.json
+!/.prettierrc
+
+!/.config/nvim/
+!/.config/ghostty/
+
+!/.config/fish/config.fish
+!/.config/fish/functions/fish_user_key_bindings.fish
+
+!/.config/ripgrep
