@@ -75,7 +75,14 @@ return {
 		"typescriptreact",
 		"typescript.tsx",
 	},
-	root_markers = { "deno.json", "deno.jsonc", ".git" },
+	workspace_required = true,
+	root_dir = function(bufnr, on_dir)
+		local root_files = { "deno.json", "deno.jsonc" }
+		local fname = vim.api.nvim_buf_get_name(bufnr)
+		if vim.uv.fs_stat(fname) ~= nil then
+			on_dir(vim.fs.dirname(vim.fs.find(root_files, { path = fname, upward = true })[1]))
+		end
+	end,
 	settings = {
 		deno = {
 			enable = true,
