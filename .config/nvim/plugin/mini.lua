@@ -30,7 +30,7 @@ now(function()
 			vim.api.nvim_set_current_win(cur_target)
 		end
 
-		local desc = "MiniFiles: Split " .. direction
+		local desc = "Split " .. direction
 		vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 	end
 
@@ -146,6 +146,11 @@ later(function()
 					return ft
 				end
 				local filetype = get_filetype_with_icon()
+
+				local dmode_enabled = require("debugmaster.debug.mode").is_active()
+
+				mode = dmode_enabled and "DEBUG" or mode
+				mode_hl = dmode_enabled and "dCursor" or mode_hl
 
 				return statusline.combine_groups({
 					{ hl = mode_hl, strings = { mode } },

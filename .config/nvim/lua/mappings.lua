@@ -19,5 +19,14 @@ vim.keymap.set("v", "<M-l>", ">gv", { desc = "Move Line Left" })
 vim.keymap.set("v", "<M-h>", "<gv", { desc = "Move Line Right" })
 
 -- Insert Newlines in Normal Mode
-vim.keymap.set("n", "<cr>", "m`o<esc>``")
-vim.keymap.set("n", "<s-cr>", "m`O<esc>``")
+vim.keymap.set("n", "<cr>", "m`o<esc>`")
+vim.keymap.set("n", "<s-cr>", "m`O<esc>`")
+
+-- Tabs
+vim.keymap.set("n", "<c-t>k", ":tabnew<cr>", { desc = "Tab: New" })
+vim.keymap.set("n", "<c-t>j", ":tabclose<cr>", { desc = "Tab: Close" })
+vim.keymap.set("n", "<c-t>J", ":tabonly<cr>", { desc = "Tab: Close all except curent one" })
+vim.keymap.set("n", "<c-t>l", ":+tabnext<cr>", { desc = "Tab: Next" })
+vim.keymap.set("n", "<c-t>h", ":-tabnext<cr>", { desc = "Tab: Previous" })
+vim.keymap.set("n", "<c-t>L", ":+tabmove<cr>", { desc = "Tab: Move Right" })
+vim.keymap.set("n", "<c-t>H", ":-tabmove<cr>", { desc = "Tab: Move Left" })

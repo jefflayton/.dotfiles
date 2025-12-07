@@ -5,11 +5,18 @@ local pickFiles = function(exe)
 		return coroutine.create(function(coro)
 			-- Get executable files asynchronously
 			local title = "Files"
-			local command = { "fd", "--hidden", "--ignore" }
+			local command = { "fd" }
 			if exe then
 				title = "Executables"
 				table.insert(command, "--type")
-				table.insert(command, "x")
+				table.insert(command, "f")
+				table.insert(command, "--no-ignore")
+				table.insert(command, "--exclude")
+				table.insert(command, ".zig-cache")
+				table.insert(command, ".")
+				table.insert(command, "zig-out/bin")
+			else
+				table.insert(command, "--ignore")
 			end
 
 			local result = vim.system(command, { text = true }):wait()
@@ -66,13 +73,17 @@ end
 
 later(function()
 	add({
-		source = "rcarriga/nvim-dap-ui",
-		depends = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
+		source = "miroshQa/debugmaster.nvim",
+		depends = { "mfussenegger/nvim-dap", "jbyuki/one-small-step-for-vimkind" },
 	})
 
+	local dm = require("debugmaster")
+	dm.plugins.ui_auto_toggle.enabled = true
+	dm.plugins.osv_integration.enabled = true
+	vim.keymap.set({ "n", "v" }, "<leader>d", dm.mode.toggle, { nowait = true, desc = "DAP: Toggle UI" })
+	vim.api.nvim_set_hl(0, "dCursor", { bg = "#a6e3a1", fg = "#1e1e2e" })
+
 	local dap = require("dap")
-	local dapui = require("dapui")
-	require("dapui").setup()
 	dap.set_log_level("TRACE")
 
 	-- JavaScript/TypeScript
@@ -223,57 +234,4 @@ later(function()
 			runInTerminal = false,
 		},
 	}
-
-	-- Automatically open and close dap-view
-	dap.listeners.before.attach.dapui_config = function()
-		dapui.open()
-	end
-	dap.listeners.before.launch.dapui_config = function()
-		dapui.open()
-	end
-
-	local nmap = function(keymap, action, desc)
-		vim.keymap.set("n", keymap, action, { desc = "DAP: " .. desc })
-	end
-
-	nmap("<leader>ddu", function()
-		dapui.toggle()
-	end, "Toggle UI")
-	nmap("<leader>ddc", function()
-		dap.continue()
-	end, "Continue")
-	nmap("<leader>ddr", function()
-		dap.run_last()
-	end, "Continue")
-
-	-- Stepping
-	nmap("<down>", function()
-		dap.step_over()
-	end, "Step Over")
-	nmap("<left>", function()
-		dap.step_out()
-	end, "Step Out")
-	nmap("<right>", function()
-		dap.step_into()
-	end, "Step Into")
-
-	-- Breakpoints
-	nmap("<leader>ddb", function()
-		dap.toggle_breakpoint()
-	end, "Toggle Breakpoint")
-	nmap("<leader>ddl", function()
-		dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
-	end, "Set Log Point")
-
-	-- Widgets
-	local widgets = require("dap.ui.widgets")
-	nmap("<leader>ddp", function()
-		widgets.preview()
-	end, "Preview")
-	nmap("<leader>ddf", function()
-		widgets.centered_float(widgets.frames)
-	end, "Frames")
-	nmap("<leader>dds", function()
-		widgets.centered_float(widgets.scopes)
-	end, "Scopes")
 end)

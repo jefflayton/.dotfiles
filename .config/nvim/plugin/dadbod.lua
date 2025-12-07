@@ -13,6 +13,6 @@ later(function()
 	})
 	vim.keymap.set("n", "<leader>le", "<cmd>Dotenv<cr>", { desc = "Dotenv: Load" })
 
-	vim.keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
-	vim.keymap.set("n", "<leader>dbf", "<cmd>DBUIFindBuffer<cr>", { desc = "DB: Find Buffer" })
+	vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
+	vim.keymap.set("n", "<c-b>f", "<cmd>DBUIFindBuffer<cr>", { desc = "DB: Find Buffer" })
 end)

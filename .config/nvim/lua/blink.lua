@@ -5,8 +5,8 @@ now(function()
 		source = "saghen/blink.cmp",
 		depends = {
 			"kristijanhusak/vim-dadbod-completion",
-			"alexandre-abrioux/blink-cmp-npm.nvim",
 			"L3MON4D3/LuaSnip",
+			"mikavilpas/blink-ripgrep.nvim",
 		},
 	})
 	add({ source = "L3MON4D3/LuaSnip" })
@@ -74,11 +74,10 @@ now(function()
 				"lazydev",
 				"snippets",
 				"path",
+				"ripgrep",
 			},
 			per_filetype = {
 				sql = { inherit_defaults = true, "dadbod" },
-				json = { inherit_defaults = true, "npm" },
-				jsonc = { inherit_defaults = true, "npm" },
 			},
 			providers = {
 				dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
@@ -92,20 +91,13 @@ now(function()
 					module = "blink.cmp.sources.snippets",
 					min_keyword_length = 2,
 				},
-				npm = {
-					name = "npm",
-					module = "blink-cmp-npm",
-					async = true,
-					-- optional - make blink-cmp-npm completions top priority (see `:h blink.cmp`)
-					score_offset = 100,
-					-- optional - blink-cmp-npm config
-					---@module "blink-cmp-npm"
-					---@type blink-cmp-npm.Options
-					opts = {
-						ignore = {},
-						only_semantic_versions = true,
-						only_latest_version = false,
-					},
+				ripgrep = {
+					module = "blink-ripgrep",
+					name = "Ripgrep",
+					-- see the full configuration below for all available options
+					---@module "blink-ripgrep"
+					---@type blink-ripgrep.Options
+					opts = {},
 				},
 			},
 		},

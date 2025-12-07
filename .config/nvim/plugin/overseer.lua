@@ -8,7 +8,7 @@ later(function()
 	local overseer = require("overseer")
 	overseer.setup({
 		strategy = "toggleterm",
-		templates = { "builtin", "zig.build", "zig.build_run" },
+		templates = { "builtin" },
 	})
 
 	local nmap = function(keymap, action, desc)

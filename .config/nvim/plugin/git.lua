@@ -3,8 +3,8 @@ local add, now, later = deps.add, deps.now, deps.later
 
 now(function()
 	add({ source = "sindrets/diffview.nvim" })
-	vim.keymap.set("n", "<leader>dvo", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open Diffview" })
-	vim.keymap.set("n", "<leader>dvc", "<cmd>DiffviewClose<cr>", { desc = "Git: Close Diffview" })
+	vim.keymap.set("n", "<C-D>o", "<cmd>DiffviewOpen<cr>", { desc = "Git: Open Diffview" })
+	vim.keymap.set("n", "<C-D>c", "<cmd>DiffviewClose<cr>", { desc = "Git: Close Diffview" })
 end)
 
 later(function()
