@@ -3,13 +3,11 @@ local add, now = require("mini.deps").add, require("mini.deps").now
 now(function()
 	add({
 		source = "saghen/blink.cmp",
-		depends = {
-			"kristijanhusak/vim-dadbod-completion",
-			"L3MON4D3/LuaSnip",
-			"mikavilpas/blink-ripgrep.nvim",
-		},
+		checkout = "v1.8.0",
 	})
+	add({ source = "kristijanhusak/vim-dadbod-completion" })
 	add({ source = "L3MON4D3/LuaSnip" })
+
 	local luasnip = require("luasnip")
 	luasnip.setup()
 	require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
@@ -74,7 +72,6 @@ now(function()
 				"lazydev",
 				"snippets",
 				"path",
-				"ripgrep",
 			},
 			per_filetype = {
 				sql = { inherit_defaults = true, "dadbod" },
@@ -91,16 +88,11 @@ now(function()
 					module = "blink.cmp.sources.snippets",
 					min_keyword_length = 2,
 				},
-				ripgrep = {
-					module = "blink-ripgrep",
-					name = "Ripgrep",
-					-- see the full configuration below for all available options
-					---@module "blink-ripgrep"
-					---@type blink-ripgrep.Options
-					opts = {},
-				},
 			},
 		},
-		fuzzy = { implementation = "lua" },
+		fuzzy = {
+			implementation = "prefer_rust",
+			sorts = { "exact", "score", "sort_text", "label" },
+		},
 	})
 end)
