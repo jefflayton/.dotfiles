@@ -61,4 +61,7 @@ later(function()
 
 	add({ source = "MagicDuck/grug-far.nvim" })
 	require("grug-far").setup({})
+
+	add({ source = "Hashino/doing.nvim" })
+	require("doing").setup()
 end)

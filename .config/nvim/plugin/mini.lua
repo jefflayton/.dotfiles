@@ -149,7 +149,13 @@ later(function()
 
 				local dmode_enabled = require("debugmaster.debug.mode").is_active()
 
-				mode = dmode_enabled and "DEBUG" or mode
+				local dmode = function()
+					if statusline.is_truncated(120) then
+						return "D"
+					end
+					return "DEBUG"
+				end
+				mode = dmode_enabled and dmode() or mode
 				mode_hl = dmode_enabled and "dCursor" or mode_hl
 
 				return statusline.combine_groups({
@@ -208,12 +214,18 @@ later(function()
 			{ mode = "i", keys = "<C-r>" },
 			{ mode = "c", keys = "<C-r>" },
 
-			-- Window commands
-			{ mode = "n", keys = "<C-w>" },
-
 			-- `z` key
 			{ mode = "n", keys = "z" },
 			{ mode = "x", keys = "z" },
+
+			-- Window commands
+			{ mode = "n", keys = "<C-w>" },
+
+			-- Custom Keymaps --
+			-- DB
+			{ mode = "n", keys = "<C-b>" },
+			--  Tabs
+			{ mode = "n", keys = "<C-t>" },
 		},
 
 		clues = {
