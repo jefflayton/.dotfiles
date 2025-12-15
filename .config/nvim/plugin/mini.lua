@@ -34,12 +34,19 @@ now(function()
 		vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 	end
 
+	local open_file = function(buf_id, keys)
+		vim.keymap.set("n", keys, function()
+			vim.ui.open(files.get_fs_entry().path)
+		end, { buffer = buf_id, desc = "Open File" })
+	end
+
 	vim.api.nvim_create_autocmd("User", {
 		pattern = "MiniFilesBufferCreate",
 		callback = function(args)
 			local buf_id = args.data.buf_id
 			map_split(buf_id, "<C-s>", "belowright horizontal")
 			map_split(buf_id, "<C-v>", "belowright vertical")
+			open_file(buf_id, "<C-o>")
 		end,
 	})
 end)
@@ -122,11 +129,11 @@ later(function()
 				local git = statusline.section_git({ trunc_width = 40 })
 				local diff = statusline.section_diff({ trunc_width = 75 })
 				local diagnostics = statusline.section_diagnostics({ trunc_width = 75 })
-				local lsp = statusline.section_lsp({ trunc_width = 75 })
+				-- local lsp = statusline.section_lsp({ trunc_width = 75 })
 				local filename = statusline.section_filename({ trunc_width = 140 })
-				local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
-				local location = statusline.section_location({ trunc_width = 75 })
-				local search = statusline.section_searchcount({ trunc_width = 75 })
+				-- local fileinfo = statusline.section_fileinfo({ trunc_width = 120 })
+				-- local location = statusline.section_location({ trunc_width = 75 })
+				-- local search = statusline.section_searchcount({ trunc_width = 75 })
 
 				local function get_filetype_with_icon()
 					local ft = vim.bo.filetype
