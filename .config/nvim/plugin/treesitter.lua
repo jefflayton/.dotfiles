@@ -29,31 +29,36 @@ now(function()
 		},
 	})
 
-	ts.install({
-		"bash",
-		"c",
-		"cpp",
-		"css",
-		"csv",
-		"dockerfile",
-		"fish",
-		"html",
-		"http",
-		"java",
-		"javascript",
-		"jsdoc",
-		"json",
-		"jsonc",
-		"lua",
-		"make",
-		"markdown",
-		"markdown_inline",
-		"regex",
-		"sql",
-		"svelte",
-		"typescript",
-		"typst",
-		"yaml",
-		"zig",
+	-- Install and enable treesitter highlighting
+	local augroup = vim.api.nvim_create_augroup("my.treesitter", { clear = true })
+	vim.api.nvim_create_autocmd("FileType", {
+		group = augroup,
+		pattern = { "*" },
+		callback = function(event)
+			local filetype = event.match
+			local lang = vim.treesitter.language.get_lang(filetype)
+			local is_installed, error
+			if lang then
+				is_installed, error = vim.treesitter.language.add(lang)
+			end
+
+			if not is_installed then
+				local available_langs = ts.get_available()
+				local is_available = vim.tbl_contains(available_langs, lang)
+
+				if is_available then
+					vim.notify("Installing treesitter parser for " .. lang, vim.log.levels.INFO)
+					ts.install({ lang }):wait(30 * 1000)
+				end
+			end
+
+			local ok, _ = pcall(vim.treesitter.start, event.buf, lang)
+			if not ok then
+				return
+			end
+
+			vim.bo[event.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+		end,
 	})
 end)
