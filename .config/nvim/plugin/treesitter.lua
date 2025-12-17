@@ -29,7 +29,35 @@ now(function()
 		},
 	})
 
-	-- Install and enable treesitter highlighting
+	ts.install({
+		"bash",
+		"c",
+		"cpp",
+		"css",
+		"csv",
+		"dockerfile",
+		"fish",
+		"html",
+		"http",
+		"java",
+		"javascript",
+		"jsdoc",
+		"json",
+		"jsonc",
+		"lua",
+		"make",
+		"markdown",
+		"markdown_inline",
+		"regex",
+		"sql",
+		"svelte",
+		"typescript",
+		"typst",
+		"yaml",
+		"zig",
+	})
+
+	-- Enable treesitter highlighting
 	local augroup = vim.api.nvim_create_augroup("my.treesitter", { clear = true })
 	vim.api.nvim_create_autocmd("FileType", {
 		group = augroup,
