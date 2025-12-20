@@ -5,9 +5,9 @@ name = "Jeff Layton"
 email = "jefflayton23+github@icloud.com"
 
 [ui]
-diff-editor = "diffview"
+diff-editor = "vscode-diff"
 
-[merge-tools.diffview]
+[merge-tools.vscode-dff]
 program = "sh"
 edit-args = ["-c", '''
   set -eu
@@ -16,7 +16,7 @@ edit-args = ["-c", '''
   git -C "$left" add -A
   git -C "$left" commit -q -m baseline --allow-empty
   mv "$left/.git" "$right"
-  (cd "$right"; nvim -c DiffviewOpen)
+  (cd "$right"; nvim -c CodeDiff)
   git -C "$right" add -p
   git -C "$right" diff-index --quiet --cached HEAD && { echo "No changes done, aborting split."; exit 1; }
   git -C "$right" commit -q -m split
