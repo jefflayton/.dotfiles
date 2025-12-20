@@ -14,8 +14,10 @@ now(function()
 			synchronize = "<leader>w",
 		},
 	})
-	vim.keymap.set("n", "<leader>e", function()
-		files.open()
+	vim.keymap.set("n", "<leader>e", function(...)
+		if not files.close() then
+			files.open(...)
+		end
 	end, { desc = "MiniFiles: Open" })
 
 	local map_split = function(buf_id, lhs, direction)
@@ -34,10 +36,16 @@ now(function()
 		vim.keymap.set("n", lhs, rhs, { buffer = buf_id, desc = desc })
 	end
 
-	local open_file = function(buf_id, keys)
-		vim.keymap.set("n", keys, function()
-			vim.ui.open(files.get_fs_entry().path)
-		end, { buffer = buf_id, desc = "Open File" })
+	local ui_open = function()
+		vim.ui.open(files.get_fs_entry().path)
+	end
+
+	local set_cwd = function()
+		local path = (files.get_fs_entry() or {}).path
+		if path == nil then
+			return vim.notify("Cursor is not on valid entry")
+		end
+		vim.fn.chdir(vim.fs.dirname(path))
 	end
 
 	vim.api.nvim_create_autocmd("User", {
@@ -46,7 +54,8 @@ now(function()
 			local buf_id = args.data.buf_id
 			map_split(buf_id, "<C-s>", "belowright horizontal")
 			map_split(buf_id, "<C-v>", "belowright vertical")
-			open_file(buf_id, "<C-o>")
+			vim.keymap.set("n", "gX", ui_open, { buffer = buf_id, desc = "OS open" })
+			vim.keymap.set("n", "g~", set_cwd, { buffer = buf_id, desc = "Set cwd" })
 		end,
 	})
 end)
