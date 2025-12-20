@@ -65,6 +65,19 @@ now(function()
 	pick.setup({ options = { use_cache = true } })
 	vim.ui.select = pick.ui_select
 
+	vim.api.nvim_create_autocmd("VimEnter", {
+		callback = function()
+			local args = vim.fn.argv()
+			-- Check if no arguments or opened with a directory
+			if #args == 0 or (#args == 1 and vim.fn.isdirectory(args[1]) == 1) then
+				-- Small delay to ensure everything is loaded
+				vim.defer_fn(function()
+					require("mini.pick").builtin.files()
+				end, 10)
+			end
+		end,
+	})
+
 	pick.registry.buffers = function(local_opts, opts)
 		local_opts = local_opts or {}
 
