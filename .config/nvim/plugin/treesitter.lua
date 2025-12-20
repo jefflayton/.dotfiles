@@ -1,7 +1,15 @@
 local add, now = require("mini.deps").add, require("mini.deps").now
 
 now(function()
-	add({ source = "nvim-treesitter/nvim-treesitter", checkout = "main", monitor = "main" })
+	add({
+		source = "nvim-treesitter/nvim-treesitter",
+		checkout = "main",
+		hooks = {
+			post_checkout = function()
+				vim.cmd("TSUpdate")
+			end,
+		},
+	})
 	local ts = require("nvim-treesitter")
 	ts.setup({
 		sync_install = true,
@@ -53,6 +61,7 @@ now(function()
 		"svelte",
 		"typescript",
 		"typst",
+		"vim",
 		"yaml",
 		"zig",
 	})
