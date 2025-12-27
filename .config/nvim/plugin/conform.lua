@@ -7,7 +7,7 @@ later(function()
 	})
 	local conform = require("conform")
 
-	local jsFormatter = utils.deno_or_node({ "deno_fmt" }, { "prettier" })
+	local js_formatter = utils.deno_or_node({ "deno_fmt" }, { "prettier" })
 
 	local sql_formatter = function()
 		local pg_wd = utils.root_pattern({ ".pg_format" })
@@ -26,19 +26,19 @@ later(function()
 		},
 		formatters_by_ft = {
 			c = { "clang-format" },
-			css = jsFormatter,
-			html = jsFormatter,
-			javascript = jsFormatter,
-			javascriptreact = jsFormatter,
-			json = jsFormatter,
-			jsonc = jsFormatter,
+			css = js_formatter,
+			html = js_formatter,
+			javascript = js_formatter,
+			javascriptreact = js_formatter,
+			json = js_formatter,
+			jsonc = js_formatter,
 			lua = { "stylua" },
 			sql = sql_formatter(),
 			svelte = { "prettier" },
-			typescript = jsFormatter,
-			typescriptreact = jsFormatter,
+			typescript = js_formatter,
+			typescriptreact = js_formatter,
 			typst = { "typstyle" },
-			yaml = jsFormatter,
+			yaml = js_formatter,
 			zig = { "zigfmt" },
 		},
 		formatters = {

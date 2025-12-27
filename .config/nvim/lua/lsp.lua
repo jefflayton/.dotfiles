@@ -47,10 +47,8 @@ vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities()
 
 vim.lsp.enable({
 	"clangd",
-	-- "cssls",
 	"denols",
 	"harperls",
-	-- "html",
 	"jsonls",
 	"luals",
 	"postgres_lsp",

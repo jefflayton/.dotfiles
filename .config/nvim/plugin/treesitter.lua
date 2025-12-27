@@ -62,6 +62,7 @@ now(function()
 		"typescript",
 		"typst",
 		"vim",
+		"vimdoc",
 		"yaml",
 		"zig",
 	})
@@ -74,18 +75,17 @@ now(function()
 		callback = function(event)
 			local filetype = event.match
 			local lang = vim.treesitter.language.get_lang(filetype)
-			local is_installed, error
 			if lang then
-				is_installed, error = vim.treesitter.language.add(lang)
-			end
+				local is_installed, _ = vim.treesitter.language.add(lang)
 
-			if not is_installed then
-				local available_langs = ts.get_available()
-				local is_available = vim.tbl_contains(available_langs, lang)
+				if not is_installed then
+					local available_langs = ts.get_available()
+					local is_available = vim.tbl_contains(available_langs, lang)
 
-				if is_available then
-					vim.notify("Installing treesitter parser for " .. lang, vim.log.levels.INFO)
-					ts.install({ lang }):wait(30 * 1000)
+					if is_available then
+						vim.notify("Installing treesitter parser for " .. lang, vim.log.levels.INFO)
+						ts.install({ lang }):wait(30 * 1000)
+					end
 				end
 			end
 
