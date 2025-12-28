@@ -29,9 +29,6 @@ later(function()
 	vim.keymap.set("n", "[;", dropbar_api.goto_context_start, { desc = "Dropbar: Go to start of current context" })
 	vim.keymap.set("n", "];", dropbar_api.select_next_context, { desc = "Dropbar: Select next context" })
 
-	add({ source = "windwp/nvim-autopairs" })
-	require("nvim-autopairs").setup()
-
 	add({ source = "shortcuts/no-neck-pain.nvim" })
 	require("no-neck-pain").setup({ width = 150 })
 	vim.keymap.set("n", "<leader>np", "<CMD>NoNeckPain<CR>", { desc = "NoNeckPain: Toggle" })
