@@ -40,7 +40,7 @@ now(function()
 			},
 		},
 		keymap = {
-			["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+			["<C-i>"] = { "show", "show_documentation", "hide_documentation" },
 			["<C-e>"] = { "hide", "fallback" },
 
 			["<Tab>"] = {

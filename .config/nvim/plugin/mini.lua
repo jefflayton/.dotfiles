@@ -63,23 +63,13 @@ end)
 now(function()
 	local pick = require("mini.pick")
 	pick.setup({ options = { use_cache = true } })
-	vim.ui.select = pick.ui_select
-
-	vim.api.nvim_create_autocmd("VimEnter", {
-		callback = function()
-			local args = vim.fn.argv()
-			if #args == 0 then
-				pick.builtin.files()
-			end
-		end,
-	})
 
 	pick.registry.buffers = function(local_opts, opts)
 		local_opts = local_opts or {}
 
 		-- Delete the current buffer
 		local wipeout_cur = function()
-			vim.api.nvim_buf_delete(pick.get_picker_matches().current.bufnr, {})
+			vim.api.nvim_buf_delete(pick.get_picker_matches().current.bufnr, { force = true })
 			pick.builtin.buffers(local_opts, opts)
 		end
 
@@ -95,6 +85,17 @@ now(function()
 	end
 
 	local pickOpts = { tool = "rg" }
+
+	vim.api.nvim_create_autocmd("VimEnter", {
+		callback = function()
+			local args = vim.fn.argv()
+			if #args == 0 then
+				vim.schedule(function()
+					pick.builtin.files(pickOpts)
+				end)
+			end
+		end,
+	})
 
 	local nmap = function(keymap, action, desc)
 		vim.keymap.set("n", keymap, action, { desc = "MiniPick: " .. desc })

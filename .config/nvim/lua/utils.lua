@@ -91,14 +91,21 @@ function M.root_markers_with_field(root_files, new_names, field, fname)
 	return root_files
 end
 
-function M.deno_or_node(deno, node)
-	local deno_wd = M.root_pattern({ "deno.json", "deno.jsonc" })()
-
-	if deno_wd ~= nil then
-		return deno
-	else
-		return node
+--- Decides what util to use based on the available configuration paths
+--- @param tools table[] Array of tool configurations with 'paths' and 'tools' fields
+--- @return string[] tool_list The selected tools array
+function M.tool_decider(tools)
+	local startpath = vim.api.nvim_buf_get_name(0)
+	for _, tool in ipairs(tools) do
+		if tool.paths then
+			local wd = M.root_pattern(tool.paths)(startpath)
+			if wd ~= nil then
+				return tool.tools
+			end
+		end
 	end
+
+	return tools[#tools].tools
 end
 
 return M

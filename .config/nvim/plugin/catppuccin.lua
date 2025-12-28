@@ -5,11 +5,12 @@ now(function()
 		source = "catppuccin/nvim",
 	})
 	require("catppuccin").setup({
-		flabor = "mocha",
+		flavor = "mocha",
 		float = {
 			transparent = true,
 			solid = true,
 		},
+		compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 	})
 	vim.cmd.colorscheme("catppuccin")
 end)

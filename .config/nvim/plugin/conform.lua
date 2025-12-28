@@ -2,23 +2,41 @@ local add, later = require("mini.deps").add, require("mini.deps").later
 local utils = require("utils")
 
 later(function()
-	add({
-		source = "stevearc/conform.nvim",
+	local js_formatter = utils.tool_decider({
+		{ paths = { "deno.json", "deno.jsonc" }, tools = { "deno_fmt" } },
+		{
+			paths = {
+				".prettierrc",
+				".prettierrc.json",
+				".prettierrc.yml",
+				".prettierrc.yaml",
+				".prettierrc.json5",
+				".prettierrc.js",
+				".prettierrc.ts",
+				".prettierrc.mjs",
+				".prettierrc.cjs",
+				".prettierrc.mts",
+				".prettierrc.cts",
+				".prettier.config.js",
+				".prettier.config.ts",
+				".prettier.config.mjs",
+				".prettier.config.cjs",
+				".prettier.config.mts",
+				".prettier.config.cts",
+				".prettierrc.toml",
+			},
+			tools = { "prettier" },
+		},
+		{ paths = { "biome.json", "biome.jsonc" }, tools = { "biome" } },
 	})
+
+	local sql_formatter = utils.tool_decider({
+		{ paths = { ".pg_format" }, tools = { "pg_format" } },
+		{ tools = { "sqlfluff" } },
+	})
+
+	add({ source = "stevearc/conform.nvim", })
 	local conform = require("conform")
-
-	local js_formatter = utils.deno_or_node({ "deno_fmt" }, { "prettier" })
-
-	local sql_formatter = function()
-		local pg_wd = utils.root_pattern({ ".pg_format" })
-
-		if pg_wd ~= nil then
-			return {}
-		else
-			return { "pg_format" }
-		end
-	end
-
 	conform.setup({
 		format_on_save = {
 			timeout_ms = 500,
@@ -33,7 +51,7 @@ later(function()
 			json = js_formatter,
 			jsonc = js_formatter,
 			lua = { "stylua" },
-			sql = sql_formatter(),
+			sql = sql_formatter,
 			svelte = { "prettier" },
 			typescript = js_formatter,
 			typescriptreact = js_formatter,

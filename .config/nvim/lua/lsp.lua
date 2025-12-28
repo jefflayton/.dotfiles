@@ -46,6 +46,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
 
 vim.lsp.enable({
+    "biome",
 	"clangd",
 	"denols",
 	"harperls",
@@ -56,6 +57,6 @@ vim.lsp.enable({
 	"sqls",
 	"tailwindcss",
 	"tinymist",
-	"ts_ls",
+	"tsgo",
 	"zls",
 })
