@@ -4,11 +4,12 @@
 
 # Whitelist specific configs
 !/.gitignore
-!/.jjconfig.toml
 !/.nvmrc
 
 !/.eslintrc.json
 !/.prettierrc
+
+!/.config/jj/config.toml
 
 !/.config/nvim
 !/.config/nvim/**
