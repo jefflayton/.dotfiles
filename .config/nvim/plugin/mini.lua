@@ -208,6 +208,7 @@ later(function()
 	require("mini.extra").setup()
 	require("mini.git").setup()
 	require("mini.notify").setup()
+	require("mini.pairs").setup()
 	require("mini.splitjoin").setup()
 	require("mini.surround").setup()
 

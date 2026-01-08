@@ -35,7 +35,7 @@ later(function()
 		{ tools = { "sqlfluff" } },
 	})
 
-	add({ source = "stevearc/conform.nvim", })
+	add({ source = "stevearc/conform.nvim" })
 	local conform = require("conform")
 	conform.setup({
 		format_on_save = {
@@ -53,6 +53,7 @@ later(function()
 			lua = { "stylua" },
 			sql = sql_formatter,
 			svelte = { "prettier" },
+			toml = { "taplo" },
 			typescript = js_formatter,
 			typescriptreact = js_formatter,
 			typst = { "typstyle" },

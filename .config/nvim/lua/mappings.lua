@@ -22,6 +22,12 @@ vim.keymap.set("v", "<M-h>", "<gv", { desc = "Move Line Right" })
 vim.keymap.set("n", "<cr>", "m`o<esc>`")
 vim.keymap.set("n", "<s-cr>", "m`O<esc>`")
 
+-- Splits
+vim.keymap.set("n", "<c-h>", ":wincmd h<cr>", { desc = "Split: Right" })
+vim.keymap.set("n", "<c-j>", ":wincmd j<cr>", { desc = "Split: Down" })
+vim.keymap.set("n", "<c-k>", ":wincmd k<cr>", { desc = "Split: Up" })
+vim.keymap.set("n", "<c-l>", ":wincmd l<cr>", { desc = "Split: Left" })
+
 -- Tabs
 vim.keymap.set("n", "<c-t>k", ":tabnew<cr>", { desc = "Tab: New" })
 vim.keymap.set("n", "<c-t>j", ":tabclose<cr>", { desc = "Tab: Close" })
