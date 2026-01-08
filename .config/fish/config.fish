@@ -17,12 +17,17 @@ alias gcm="git commit -m"
 
 alias js="jj status"
 alias jd="jj describe"
-alias jbc="jj bookmark create"
 alias jn="jj new"
+alias jr="jj rebase --onto"
+alias jbc="jj bookmark create"
+alias jbs="jj bookmark set"
+alias jbt="jj bookmark track"
 alias jgp="jj git push"
 alias jgf="jj git fetch"
 
 alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
+
+alias pn="pnpm"
 
 zoxide init fish | source
 

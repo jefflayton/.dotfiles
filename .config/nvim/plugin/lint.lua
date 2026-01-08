@@ -6,6 +6,12 @@ later(function()
 		{ paths = { "deno.json", "deno.jsonc" }, tools = { "deno" } },
 		{
 			paths = {
+				".eslintrc",
+				".eslintrc.js",
+				".eslintrc.cjs",
+				".eslintrc.yaml",
+				".eslintrc.yml",
+				".eslintrc.json",
 				"eslint.config.js",
 				"eslint.config.mjs",
 				"eslint.config.cjs",

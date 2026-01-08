@@ -4,6 +4,9 @@
 name = "Jeff Layton"
 email = "jefflayton23+github@icloud.com"
 
+[remotes.origin]
+auto-track-bookmarks = "glob:*"
+
 [ui]
 diff-editor = "vscode-diff"
 

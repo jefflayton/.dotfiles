@@ -24,6 +24,9 @@ vim.o.smartcase = true
 -- Terminal colors
 vim.o.termguicolors = true
 
+-- Disable concealment (hidden quotes in JSON, etc.)
+vim.o.conceallevel = 0
+
 -- Required for Deno
 vim.g.markdown_fenced_languages = {
 	"ts=typescript",
