@@ -19,25 +19,10 @@ later(function()
 
 	add({ source = "OXY2DEV/markview.nvim" })
 	require("markview").setup({
-		experimental = { check_rtp = false },
 		preview = { icon_provider = "mini" },
-		latex = {
-			enable = true,
-		},
-		typst = {
-			enable = true,
-		},
+		typst = { enable = false },
 	})
-	require("markview.extras.checkboxes").setup()
-	vim.keymap.set("n", "<leader>ct", "<cmd>CheckboxToggle<cr>", { desc = "Markview: Toggle Checkbox" })
 
-	add({ source = "epwalsh/obsidian.nvim", depends = { "nvim-lua/plenary.nvim" } })
-	require("obsidian").setup({
-		workspaces = {
-			{
-				name = "school",
-				path = "~/Documents/vault/school",
-			},
-		},
-	})
+	require("markview.extras.checkboxes").setup()
+	vim.keymap.set("n", "<c-m>c", "<cmd>Checkbox toggle<cr>", { desc = "Markview: Toggle Checkbox" })
 end)

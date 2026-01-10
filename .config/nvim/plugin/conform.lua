@@ -51,6 +51,7 @@ later(function()
 			json = js_formatter,
 			jsonc = js_formatter,
 			lua = { "stylua" },
+			roc = { "roc" },
 			sql = sql_formatter,
 			svelte = { "prettier" },
 			toml = { "taplo" },

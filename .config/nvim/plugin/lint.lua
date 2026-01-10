@@ -33,9 +33,7 @@ later(function()
 		javascript = js_linter,
 		json = { "jsonlint" },
 		jsonc = { "jsonlint" },
-		markdown = { "vale" },
 		typescript = js_linter,
-		zig = { "zlint" },
 	}
 
 	vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufReadPost" }, {

@@ -1,5 +1,19 @@
 local add, now = require("mini.deps").add, require("mini.deps").now
 
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TSUpdate",
+	callback = function()
+		require("nvim-treesitter.parsers").comment = {
+			install_info = {
+				url = "https://github.com/OXY2DEV/tree-sitter-comment",
+
+				branch = "main", -- only needed if different from default branch
+				queries = "queries/",
+			},
+		}
+	end,
+})
+
 now(function()
 	add({
 		source = "nvim-treesitter/nvim-treesitter",
@@ -40,6 +54,7 @@ now(function()
 	ts.install({
 		"bash",
 		"c",
+		"comment",
 		"cpp",
 		"css",
 		"csv",
@@ -51,12 +66,13 @@ now(function()
 		"javascript",
 		"jsdoc",
 		"json",
-		"jsonc",
 		"lua",
 		"make",
 		"markdown",
 		"markdown_inline",
+		"nu",
 		"regex",
+		"roc",
 		"sql",
 		"svelte",
 		"typescript",

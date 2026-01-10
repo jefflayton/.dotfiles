@@ -46,13 +46,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.lsp.config("*", { capabilities = require("blink.cmp").get_lsp_capabilities() })
 
 vim.lsp.enable({
-    "biome",
+	"biome",
 	"clangd",
 	"denols",
+	"docker_language_sever",
 	"harperls",
+	"jdtls",
 	"jsonls",
 	"luals",
 	"postgres_lsp",
+	"roc_ls",
 	"svelte",
 	"sqls",
 	"tailwindcss",

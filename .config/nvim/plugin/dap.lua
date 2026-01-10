@@ -80,7 +80,7 @@ later(function()
 	local dm = require("debugmaster")
 	dm.plugins.ui_auto_toggle.enabled = true
 	dm.plugins.osv_integration.enabled = true
-	vim.keymap.set({ "n", "v" }, "<leader>d", dm.mode.toggle, { nowait = true, desc = "DAP: Toggle UI" })
+	vim.keymap.set({ "n", "v" }, "<leader>d", dm.mode.toggle, { nowait = true, desc = "DAP: Enter Debug Mode" })
 	vim.api.nvim_set_hl(0, "dCursor", { bg = "#a6e3a1", fg = "#1e1e2e" })
 
 	local dap = require("dap")

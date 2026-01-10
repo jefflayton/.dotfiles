@@ -38,8 +38,8 @@ if not string match -q -- $PNPM_HOME $PATH
 end
 # pnpm end
 
-# Initialize Oh My Posh
-oh-my-posh init fish --config "$HOME/.config/ohmyposh/config.json" | source
+# # Initialize Oh My Posh
+# oh-my-posh init fish --config "$HOME/.config/ohmyposh/config.json" | source
 
 # Ngrok Completions
 if command -v ngrok &>/dev/null
@@ -49,3 +49,6 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# bat, used by delta
+set --export BAT_CONFIG_DIR "$HOME/.config/bat"
