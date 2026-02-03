@@ -24,5 +24,7 @@
 !/.config/ohmyposh/**
 
 !/.config/fish/config.fish
-!/.config/fish/functions/fish_user_key_bindings.fish
+
+!/.config/delta/**
+!/.config/bat/**
 

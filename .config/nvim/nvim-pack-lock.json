@@ -1,0 +1,121 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "b137f63d89d0285ca76eed12e1923220e0aff8c1",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
+    "blink.download": {
+      "rev": "86361b98f3c8317904a08e3bd12cf3cdcbe3e925",
+      "src": "https://github.com/saghen/blink.download"
+    },
+    "blink.indent": {
+      "rev": "9c80820ca77218a8d28e70075d6f44a1609911fe",
+      "src": "https://github.com/saghen/blink.indent"
+    },
+    "blink.pairs": {
+      "rev": "65978aadaf9b7d6cae59c1c51cf2b366b370546e",
+      "src": "https://github.com/saghen/blink.pairs"
+    },
+    "conform.nvim": {
+      "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "debugmaster.nvim": {
+      "rev": "505d9a269d657ce8e0fa5601e0530f0d8798038c",
+      "src": "https://github.com/miroshQa/debugmaster.nvim"
+    },
+    "deltaview.nvim": {
+      "rev": "70f1d2d25c64f2c70afd4b4f92fd56dc29194899",
+      "src": "https://github.com/kokusenz/deltaview.nvim"
+    },
+    "flash.nvim": {
+      "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
+      "src": "https://github.com/folke/flash.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "gitsigns.nvim": {
+      "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "lazydev.nvim": {
+      "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
+      "src": "https://github.com/folke/lazydev.nvim"
+    },
+    "markview.nvim": {
+      "rev": "c81ce9ed129387fc5fdec91abe9818a1b0e6fcac",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
+    "mason.nvim": {
+      "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
+      "src": "https://github.com/mason-org/mason.nvim"
+    },
+    "neorg": {
+      "rev": "f81b9d2c770b92d9bd28c85975da7d301da33882",
+      "src": "https://github.com/nvim-neorg/neorg"
+    },
+    "no-neck-pain.nvim": {
+      "rev": "4bc52782524fd50c5658685d584df6fa48fe49f9",
+      "src": "https://github.com/shortcuts/no-neck-pain.nvim"
+    },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim": {
+      "rev": "beaf41a30c26fd7d6c386d383155cbd65dd554cd",
+      "src": "https://github.com/catppuccin/nvim"
+    },
+    "nvim-dap": {
+      "rev": "e47878dcf1ccc30136b30d19ab19fe76946d61cd",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-java": {
+      "rev": "d196b25eda89ae957110f2966d1753889dc197b2",
+      "src": "https://github.com/nvim-java/nvim-java"
+    },
+    "nvim-lint": {
+      "rev": "b3292aac30b935d4cccf0904053d1c7930df8a20",
+      "src": "https://github.com/mfussenegger/nvim-lint"
+    },
+    "nvim-pretty-ts-errors": {
+      "rev": "b5d8e0798884323ebbf587c54ebfa128c87f9c19",
+      "src": "https://github.com/enochchau/nvim-pretty-ts-errors"
+    },
+    "nvim-treesitter": {
+      "rev": "f8bbc3177d929dc86e272c41cc15219f0a7aa1ac",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "one-small-step-for-vimkind": {
+      "rev": "1af6ffb9b5229a856e8090fa2f690e0931a5aace",
+      "src": "https://github.com/jbyuki/one-small-step-for-vimkind"
+    },
+    "spring-boot.nvim": {
+      "rev": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0",
+      "src": "https://github.com/JavaHello/spring-boot.nvim",
+      "version": "'218c0c26c14d99feca778e4d13f5ec3e8b1b60f0'"
+    },
+    "vim-dadbod": {
+      "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
+      "src": "https://github.com/tpope/vim-dadbod"
+    },
+    "vim-dadbod-completion": {
+      "rev": "a8dac0b3cf6132c80dc9b18bef36d4cf7a9e1fe6",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-completion"
+    },
+    "vim-dadbod-ui": {
+      "rev": "48c4f271da13d380592f4907e2d1d5558044e4e5",
+      "src": "https://github.com/kristijanhusak/vim-dadbod-ui"
+    },
+    "vim-dotenv": {
+      "rev": "5c51cfcf8d87280d6414e03cd6b253eb70ecb800",
+      "src": "https://github.com/tpope/vim-dotenv"
+    },
+    "vim-pencil": {
+      "rev": "6d70438a8886eaf933c38a7a43a61adb0a7815ed",
+      "src": "https://github.com/preservim/vim-pencil"
+    }
+  }
+}

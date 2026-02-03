@@ -31,6 +31,6 @@ macos-option-as-alt = true
 macos-icon = xray
 
 # Shell
-shell-integration = none
+shell-integration = fish
 working-directory = home
 window-inherit-working-directory = true
