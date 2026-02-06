@@ -1,30 +1,4 @@
-# Ignore everything by default
-/*
 .DS_Store
 
-# Whitelist specific configs
-!/.gitignore
-!/.nvmrc
-
-!/.eslintrc.json
-!/.prettierrc
-
-!/.config/jj/config.toml
-
-!/.config/nvim
-!/.config/nvim/**
-
-!/.config/ghostty
-!/.config/ghostty/**
-
-!/.config/ripgrep
-!/.config/ripgrep/**
-
-!/.config/ohmyposh
-!/.config/ohmyposh/**
-
-!/.config/fish/config.fish
-
-!/.config/delta/**
-!/.config/bat/**
-
+jj/.config/jj/conf.d
+fish/.config/fish/fish_variables

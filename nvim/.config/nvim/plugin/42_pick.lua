@@ -21,14 +21,12 @@ pick.registry.buffers = function(local_opts, opts)
 	return pick.builtin.buffers(local_opts, opts)
 end
 
-local pickOpts = { tool = "rg" }
-
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		local args = vim.fn.argv()
 		if #args == 0 then
 			vim.schedule(function()
-				pick.builtin.files(pickOpts)
+				pick.builtin.files({ tool = "rg" })
 			end)
 		end
 	end,
@@ -38,13 +36,13 @@ local nmap = function(keymap, action, desc)
 	vim.keymap.set("n", keymap, action, { desc = "MiniPick: " .. desc })
 end
 nmap("<leader>f", function()
-	pick.builtin.files({ tool = "fd" })
+	pick.builtin.files({ tool = "rg" })
 end, "Files")
 nmap("<leader>g", function()
 	pick.builtin.grep_live({ tool = "rg" })
 end, "Live Grep")
 nmap("<leader>b", function()
-	pick.registry.buffers({ tool = "fd" })
+	pick.registry.buffers({ tool = "rg" })
 end, "Buffers")
 nmap("<leader>h", function()
 	pick.builtin.help({ tool = "rg" })

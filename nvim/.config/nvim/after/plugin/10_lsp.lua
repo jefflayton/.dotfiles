@@ -1,11 +1,5 @@
 local extra = require("mini.extra")
 
-vim.api.nvim_create_user_command("LspInfo", function()
-	vim.cmd("checkhealth vim.lsp")
-end, {
-	desc = "Run checkhealth for vim.lsp",
-})
-
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"

@@ -19,7 +19,6 @@ local js_linter = utils.tool_decider({
 		},
 		tools = { "eslint_d" },
 	},
-	{ paths = { "biome.json", "biome.jsonc" }, tools = { "biomejs" } },
 })
 
 vim.env.ESLINT_D_PPID = vim.fn.getpid()

@@ -34,6 +34,20 @@ alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
 alias typstw="typst watch --open /Applications/Zen\ Browser.app/"
 alias pn="pnpm"
 
+# pnpm 		
+set -gx PNPM_HOME "$HOME/Library/pnpm" 		
+if not string match -q -- $PNPM_HOME $PATH 		
+    set -gx PATH "$PNPM_HOME" $PATH 		
+end
+
+# Ngrok Completions 		
+if command -v ngrok &>/dev/null 		
+    eval "$(ngrok completion)" 		
+end 		
+    
+# bat, used by delta 		
+set --export BAT_CONFIG_DIR "$HOME/.config/bat"
+
 ## Zoxide
 zoxide init fish | source
 

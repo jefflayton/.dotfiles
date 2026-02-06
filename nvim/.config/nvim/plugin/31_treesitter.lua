@@ -53,3 +53,5 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = filetypes,
 	callback = ts_start,
 })
+
+require("nvim-ts-autotag").setup()
