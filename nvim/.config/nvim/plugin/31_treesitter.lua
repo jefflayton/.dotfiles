@@ -14,11 +14,13 @@ local languages = {
 	"javascript",
 	"jsdoc",
 	"json",
+	"just",
 	"lua",
 	"make",
 	"markdown",
 	"markdown_inline",
 	"nu",
+	"odin",
 	"regex",
 	"roc",
 	"sql",
@@ -29,6 +31,16 @@ local languages = {
 	"vimdoc",
 	"yaml",
 	"zig",
+}
+
+require("nvim-treesitter.parsers").just = {
+	install_info = {
+		url = "https://github.com/IndianBoy42/tree-sitter-just",
+		files = { "src/parser.c", "src/scanner.c" },
+		branch = "main",
+		-- use_makefile = true -- this may be necessary on MacOS (try if you see compiler errors)
+	},
+	maintainers = { "@IndianBoy42" },
 }
 
 local not_installed = function(lang)

@@ -46,6 +46,7 @@ require("conform").setup({
 		javascriptreact = js_formatter,
 		json = js_formatter,
 		jsonc = js_formatter,
+		odin = { "odinfmt" },
 		lua = { "stylua" },
 		roc = { "roc" },
 		sql = sql_formatter,

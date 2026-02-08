@@ -15,17 +15,9 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 })
 
--- Doesn't work in 0.12-dev
--- require("neorg").setup({
--- 	load = {
--- 		["core.defaults"] = {},
--- 		["core.dirman"] = {
--- 			config = {
--- 				workspaces = {
--- 					notes = "~/Documents/notes",
--- 				},
--- 			},
--- 		},
--- 		["core.concealer"] = {}, -- We added this line!
--- 	},
--- })
+require("orgmode").setup({
+	org_agenda_files = "~/notes",
+})
+vim.schedule(function()
+	vim.lsp.enable("org")
+end)

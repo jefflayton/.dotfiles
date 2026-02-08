@@ -119,7 +119,7 @@ local function get_words()
 		suffix = " word"
 	end
 
-	return "| " .. tostring(count) .. suffix
+	return tostring(count) .. suffix .. " │"
 end
 
 local statusline = require("mini.statusline")

@@ -12,11 +12,6 @@ vim.pack.add({
 	gh("nvim-treesitter/nvim-treesitter"),
 	gh("windwp/nvim-ts-autotag"),
 
-	-- 32_notes
-	gh("preservim/vim-pencil"),
-	gh("OXY2DEV/markview.nvim"),
-	-- gh("nvim-neorg/neorg"), -- Doesn't work in 0.12-dev
-
 	-- 33_dap
 	gh("mfussenegger/nvim-dap"),
 	gh("jbyuki/one-small-step-for-vimkind"),
@@ -43,6 +38,10 @@ vim.pack.add({
 	gh("stevearc/conform.nvim"),
 	-- 32_lint
 	gh("mfussenegger/nvim-lint"),
+	-- 33_notes
+	gh("preservim/vim-pencil"),
+	gh("OXY2DEV/markview.nvim"),
+	gh("nvim-orgmode/orgmode"),
 
 	-- typescript
 	gh("enochchau/nvim-pretty-ts-errors"),
@@ -84,7 +83,7 @@ require("catppuccin").setup({
 	flavor = "mocha",
 	float = {
 		transparent = true,
-		solid = true,
+		solid = false,
 	},
 	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
 })

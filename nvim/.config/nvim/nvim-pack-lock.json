@@ -104,6 +104,10 @@
       "rev": "1af6ffb9b5229a856e8090fa2f690e0931a5aace",
       "src": "https://github.com/jbyuki/one-small-step-for-vimkind"
     },
+    "orgmode": {
+      "rev": "f3ea61f6d71486c9062d40efe3c882050758e9b3",
+      "src": "https://github.com/nvim-orgmode/orgmode"
+    },
     "overseer.nvim": {
       "rev": "5828bdbd86677497613033c142f0a8624489216f",
       "src": "https://github.com/stevearc/overseer.nvim"

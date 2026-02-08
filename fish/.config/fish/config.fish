@@ -31,7 +31,7 @@ alias jgf="jj git fetch --bookmark"
 
 # Other
 alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
-alias typstw="typst watch --open /Applications/Zen\ Browser.app/"
+alias typstw="typst watch --open '/Applications/Zen\ Browser.app/'"
 alias pn="pnpm"
 
 # pnpm 		
