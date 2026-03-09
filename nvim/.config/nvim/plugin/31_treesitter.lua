@@ -19,10 +19,8 @@ local languages = {
 	"make",
 	"markdown",
 	"markdown_inline",
-	"nu",
 	"odin",
 	"regex",
-	"roc",
 	"sql",
 	"svelte",
 	"typescript",
@@ -44,7 +42,7 @@ require("nvim-treesitter.parsers").just = {
 }
 
 local not_installed = function(lang)
-	return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) == 0
+	return not pcall(vim.treesitter.language.inspect, lang)
 end
 
 local to_install = vim.tbl_filter(not_installed, languages)

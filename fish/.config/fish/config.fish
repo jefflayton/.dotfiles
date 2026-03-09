@@ -34,6 +34,9 @@ alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
 alias typstw="typst watch --open '/Applications/Zen\ Browser.app/'"
 alias pn="pnpm"
 
+# Ripgrep
+set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
+
 # pnpm 		
 set -gx PNPM_HOME "$HOME/Library/pnpm" 		
 if not string match -q -- $PNPM_HOME $PATH 		
