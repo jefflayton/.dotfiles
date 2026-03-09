@@ -24,12 +24,7 @@ require("mini.ai").setup({
 	},
 })
 
-require("mini.pairs").setup({
-	mappings = {
-		["$"] = { action = "closeopen", pair = "$$", neigh_pattern = "[^\\]." },
-		["|"] = { action = "closeopen", pair = "||", neigh_pattern = "[^\\]." },
-	},
-})
+require("mini.pairs").setup()
 
 local indent = require("mini.indentscope")
 indent.setup({

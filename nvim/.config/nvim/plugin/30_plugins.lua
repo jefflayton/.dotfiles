@@ -47,6 +47,8 @@ vim.pack.add({
 	gh("enochchau/nvim-pretty-ts-errors"),
 })
 
+vim.keymap.set("n", "<leader>t", require("nvim-pretty-ts-errors").show_line_diagnostics)
+
 -- Execute Plugin Hooks
 local hooks = function(ev)
 	local name, kind = ev.data.spec.name, ev.data.kind
