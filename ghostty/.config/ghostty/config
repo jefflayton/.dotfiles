@@ -2,7 +2,6 @@
 
 # Theme
 theme = catppuccin-mocha
-# background-opacity = 0.9
 
 # Font
 font-family = "JetBrains Mono"
@@ -29,8 +28,16 @@ config-file = ./keybinds
 macos-titlebar-style = tabs
 macos-option-as-alt = true
 macos-icon = xray
+auto-update-channel = tip
 
 # Shell
 shell-integration = fish
 working-directory = home
-window-inherit-working-directory = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+split-inherit-working-directory = true
+
+# Notifications
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 15s

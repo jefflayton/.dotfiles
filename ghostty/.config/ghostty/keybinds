@@ -15,7 +15,3 @@ keybind = super+shift+h=goto_split:left
 keybind = super+shift+j=goto_split:down
 keybind = super+shift+k=goto_split:up
 keybind = super+shift+l=goto_split:right
-
-# Selection Mode
-keybind = ctrl+space>[=write_screen_file:paste
-keybind = ctrl+space>]=text:\x01nvim +1000000 \n
