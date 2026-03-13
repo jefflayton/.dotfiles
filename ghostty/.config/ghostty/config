@@ -19,7 +19,7 @@ adjust-cursor-thickness = 45%
 mouse-hide-while-typing = true
 
 # Scrollback
-scrollback-limit = 20000000
+scrollback-limit = 100000000
 
 # Keybinds
 config-file = ./keybinds
