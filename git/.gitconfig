@@ -10,3 +10,6 @@ diffFilter = delta --color-only
 
 [include]
 path = ~/.config/delta/delta.gitconfig
+
+[exclude]
+path = ~/.config/git/.gitignore.global

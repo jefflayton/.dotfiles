@@ -2,7 +2,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = { "text", "markdown", "typst" },
 	callback = function()
 		vim.cmd("PencilSoft")
-		vim.keymap.set("n", "<leader>ct", "<cmd>Checkbox toggle<cr>", { desc = "Markview: Toggle Checkbox" })
 	end,
 })
 

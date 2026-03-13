@@ -56,7 +56,7 @@ for _, lang in ipairs(languages) do
 	end
 end
 local ts_start = function(ev)
-	vim.treesitter.start(ev.buf)
+	pcall(vim.treesitter.start, ev.buf)
 end
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = filetypes,

@@ -17,3 +17,4 @@ if not vim.loop.fs_stat(mini_path) then
 end
 
 require("utils")
+require("local_config").source()
