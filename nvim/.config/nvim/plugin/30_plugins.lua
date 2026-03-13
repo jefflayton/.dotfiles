@@ -20,7 +20,7 @@ vim.pack.add({
 	-- after/plugin
 	-- 30_plugins
 	gh("cameron-wags/rainbow_csv.nvim"),
-	-- gh("MagicDuck/grug-far.nvim"), -- Doesn't work in 0.12-dev
+	gh("MagicDuck/grug-far.nvim"), -- Doesn't work in 0.12-dev
 	gh("andrewferrier/debugprint.nvim"),
 	gh("folke/flash.nvim"),
 	gh("shortcuts/no-neck-pain.nvim"),
@@ -40,7 +40,6 @@ vim.pack.add({
 	gh("mfussenegger/nvim-lint"),
 	-- 33_notes
 	gh("preservim/vim-pencil"),
-	gh("OXY2DEV/markview.nvim"),
 	gh("nvim-orgmode/orgmode"),
 
 	-- typescript

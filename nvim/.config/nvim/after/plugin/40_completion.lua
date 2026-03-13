@@ -1,5 +1,3 @@
-require("mini.snippets").setup()
-
 vim.o.completeopt = "menuone,noinsert,fuzzy,nosort"
 require("mini.completion").setup({
 	delay = { completion = 0, info = 1500, signature = 200 },

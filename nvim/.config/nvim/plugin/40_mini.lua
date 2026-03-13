@@ -80,6 +80,10 @@ require("mini.clue").setup({
 		{ mode = "n", keys = "<C-b>" },
 		--  Tabs
 		{ mode = "n", keys = "<C-t>" },
+		-- Diff
+		{ mode = "n", keys = "<C-d>" },
+		-- Grug
+		{ mode = "n", keys = "<C-r>" },
 	},
 
 	clues = {

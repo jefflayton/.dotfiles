@@ -3,7 +3,6 @@ local ts = require("nvim-treesitter")
 local languages = {
 	"bash",
 	"c",
-	"comment",
 	"cpp",
 	"css",
 	"dockerfile",

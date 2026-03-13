@@ -1,5 +1,18 @@
 require("rainbow_csv").setup()
--- require("grug-far").setup() -- Doesn't work in 0.12-dev
+require("grug-far").setup({
+	windowCreationCommand = "aboveleft split",
+})
+vim.keymap.set("n", "<c-r>u", function()
+	require("grug-far").open({
+		transient = true,
+	})
+end, { desc = "GrugFar: Open" })
+vim.keymap.set("n", "<c-r>w", function()
+	require("grug-far").open({
+		transient = true,
+		visualSelectionUsage = "operate-within-range",
+	})
+end, { desc = "GrugFar: Within" })
 
 require("debugprint").setup({
 	highlight_lines = false,
@@ -42,9 +55,9 @@ require("gitsigns").setup({ current_line_blame = true })
 require("deltaview").setup({
 	keyconfig = {
 		-- Global
-		dv_toggle_keybind = "<C-d>f",
-		dm_toggle_keybind = "<C-d>m",
-		d_toggle_keybind = "<C-d>u",
+		dv_toggle_keybind = "",
+		dm_toggle_keybind = "",
+		d_toggle_keybind = "",
 
 		-- In Diff
 		next_hunk = "]c",
@@ -56,6 +69,9 @@ require("deltaview").setup({
 	},
 	use_nerdfonts = true,
 })
+vim.keymap.set("n", "<c-d>u", "<cmd>Delta<cr>", { desc = "Delta: Open" })
+vim.keymap.set("n", "<c-d>m", "<cmd>DeltaMenu<cr>", { desc = "Delta: Menu" })
+vim.keymap.set("n", "<c-d>v", "<cmd>DeltaView<cr>", { desc = "Delta: View" })
 
 -- Dadbod
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })

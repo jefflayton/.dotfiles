@@ -53,7 +53,7 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "markview.nvim": {
-      "rev": "c81ce9ed129387fc5fdec91abe9818a1b0e6fcac",
+      "rev": "918f3f92e87d28a487af89912d774521a52f9888",
       "src": "https://github.com/OXY2DEV/markview.nvim"
     },
     "mason.nvim": {
