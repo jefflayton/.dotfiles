@@ -18,6 +18,7 @@ local languages = {
 	"make",
 	"markdown",
 	"markdown_inline",
+	"nix",
 	"odin",
 	"regex",
 	"sql",
