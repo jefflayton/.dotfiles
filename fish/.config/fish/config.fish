@@ -56,3 +56,6 @@ zoxide init fish | source
 
 ## Initialize Oh My Posh
 oh-my-posh init fish --config "$HOME/.config/ohmyposh/config.json" | source
+
+# Rust
+source "$HOME/.cargo/env.fish"

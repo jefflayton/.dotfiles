@@ -46,7 +46,7 @@ vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc =
 
 -- Overseer
 require("overseer").setup()
-vim.keymap.set("n", "<leader>oo", "<cmd>OverseerRun<cr>", { desc = "Overseer: Run" })
+vim.keymap.set("n", "<leader>or", "<cmd>OverseerRun<cr>", { desc = "Overseer: Run" })
 vim.keymap.set("n", "<leader>oo", "<cmd>OverseerOpen<cr>", { desc = "Overseer: Open" })
 vim.keymap.set("n", "<leader>oc", "<cmd>OverseerClose<cr>", { desc = "Overseer: Close" })
 
@@ -77,3 +77,26 @@ vim.keymap.set("n", "<c-d>v", "<cmd>DeltaView<cr>", { desc = "Delta: View" })
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
 vim.keymap.set("n", "<c-b>f", "<cmd>DBUIFindBuffer<cr>", { desc = "DB: Find Buffer" })
 vim.keymap.set("n", "<leader>le", "<cmd>Dotenv<cr>", { desc = "Dotenv: Load" })
+
+require("snacks").setup({
+	image = {
+		enabled = true,
+		math = {
+			enabled = false,
+		},
+	},
+
+	-- Disabled
+	bigfile = { enabled = false },
+	dashboard = { enabled = false },
+	explorer = { enabled = false },
+	indent = { enabled = false },
+	input = { enabled = false },
+	notifier = { enabled = false },
+	picker = { enabled = false },
+	quickfile = { enabled = false },
+	scope = { enabled = false },
+	scroll = { enabled = false },
+	statuscolumn = { enabled = false },
+	words = { enabled = false },
+})

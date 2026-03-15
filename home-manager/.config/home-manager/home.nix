@@ -43,18 +43,20 @@
     fish
     fzf
     jujutsu
-    ghostty-bin
     neovim
     nixfmt
     nodejs
     oh-my-posh
     pnpm
     postgresql
+    python314
     ripgrep
+    silicon
     stow
     tree-sitter
     typst
-    zigpkgs.master
+    zigpkgs."0.16.0"
+    zathura
     zoxide
   ];
 

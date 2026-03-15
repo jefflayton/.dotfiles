@@ -17,14 +17,18 @@ vim.pack.add({
 	gh("jbyuki/one-small-step-for-vimkind"),
 	gh("miroshQa/debugmaster.nvim"),
 
+	-- 51_godot
+	gh("Mathijs-Bakker/godotdev.nvim"),
+
 	-- after/plugin
 	-- 30_plugins
 	gh("cameron-wags/rainbow_csv.nvim"),
-	gh("MagicDuck/grug-far.nvim"), -- Doesn't work in 0.12-dev
+	gh("MagicDuck/grug-far.nvim"),
 	gh("andrewferrier/debugprint.nvim"),
 	gh("folke/flash.nvim"),
 	gh("shortcuts/no-neck-pain.nvim"),
 	gh("stevearc/overseer.nvim"),
+	gh("folke/snacks.nvim"),
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),
 	gh("kokusenz/deltaview.nvim"),
@@ -42,6 +46,7 @@ vim.pack.add({
 	gh("preservim/vim-pencil"),
 	gh("nvim-orgmode/orgmode"),
 
+	-- after/ftplugin
 	-- typescript
 	gh("enochchau/nvim-pretty-ts-errors"),
 })
@@ -91,3 +96,6 @@ require("catppuccin").setup({
 vim.cmd.colorscheme("catppuccin")
 
 require("mason").setup()
+
+-- Godot
+vim.g.godot_executable = "/Applications/Godot.app/Contents/MacOS/Godot"

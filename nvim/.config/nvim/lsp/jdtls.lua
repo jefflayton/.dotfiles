@@ -96,8 +96,7 @@ return {
 		})
 	end,
 	filetypes = { "java" },
-	root_markers = vim.fn.has("nvim-0.11.3") == 1 and { root_markers1, root_markers2 }
-		or vim.list_extend(root_markers1, root_markers2),
+	root_markers = { root_markers1, root_markers2 },
 	init_options = {},
 	settings = {
 		java = {
@@ -117,6 +116,5 @@ return {
 	},
 	handlers = {
 		["language/status"] = function(_, _) end,
-		["$/progress"] = function() end,
 	},
 }

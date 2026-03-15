@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "asyncrun.vim": {
+      "rev": "98d3c0fdeb983f0ef62fe3a49da440f6d2c045ce",
+      "src": "https://github.com/skywind3000/asyncrun.vim"
+    },
     "blink.cmp": {
       "rev": "b137f63d89d0285ca76eed12e1923220e0aff8c1",
       "src": "https://github.com/saghen/blink.cmp"
@@ -40,9 +44,17 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "gdscript-extended-lsp.nvim": {
+      "rev": "ce2f6a3f2460d2c73a41a5a78b1068c6beab8a65",
+      "src": "https://github.com/teatek/gdscript-extended-lsp.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "godotdev.nvim": {
+      "rev": "e1b35e17b82c79144340fc4b1c65bf4ab84109a4",
+      "src": "https://github.com/Mathijs-Bakker/godotdev.nvim"
     },
     "grug-far.nvim": {
       "rev": "275dbedc96e61a6b8d1dfb28ba51586ddd233dcf",
@@ -116,6 +128,10 @@
       "rev": "26de78d8324f7ac6a3e478319d1eb1f17123eb5b",
       "src": "https://github.com/cameron-wags/rainbow_csv.nvim"
     },
+    "snacks.nvim": {
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
     "spring-boot.nvim": {
       "rev": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0",
       "src": "https://github.com/JavaHello/spring-boot.nvim",
@@ -136,6 +152,10 @@
     "vim-dotenv": {
       "rev": "5c51cfcf8d87280d6414e03cd6b253eb70ecb800",
       "src": "https://github.com/tpope/vim-dotenv"
+    },
+    "vim-godot": {
+      "rev": "2cecd0c83a7b3f012142a584d53a3a51be246c8e",
+      "src": "https://github.com/habamax/vim-godot"
     },
     "vim-pencil": {
       "rev": "6d70438a8886eaf933c38a7a43a61adb0a7815ed",
