@@ -27,10 +27,7 @@ local js_formatter = utils.tool_decider({
     },
 })
 
-local sql_formatter = utils.tool_decider({
-    { paths = { ".pg_format" }, tools = { "pg_format" } },
-    { tools = { "sqlfluff" } },
-})
+local sql_formatter = { "sqlfluff" }
 
 require("conform").setup({
     -- format_on_save = {
