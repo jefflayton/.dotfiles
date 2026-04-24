@@ -1,6 +1,23 @@
 local pick = require("mini.pick")
 pick.setup({ options = { use_cache = true } })
 
+local godot_patterns = {
+	"%.uid$",
+	"%.import$",
+	"^%.godot/",
+	"^%.mono/",
+	"godot.*%.tmp$",
+}
+
+local function is_godot_file(path)
+	for _, pattern in ipairs(godot_patterns) do
+		if path:match(pattern) then
+			return true
+		end
+	end
+	return false
+end
+
 pick.registry.buffers = function(local_opts, opts)
 	local_opts = local_opts or {}
 
@@ -36,7 +53,11 @@ local nmap = function(keymap, action, desc)
 	vim.keymap.set("n", keymap, action, { desc = "MiniPick: " .. desc })
 end
 nmap("<leader>f", function()
-	pick.builtin.files({ tool = "rg" })
+	local files = vim.fn.systemlist("rg --files")
+	local filtered = vim.tbl_filter(function(f)
+		return not is_godot_file(f)
+	end, files)
+	pick.start({ source = { items = filtered, name = "Files" } })
 end, "Files")
 nmap("<leader>g", function()
 	pick.builtin.grep_live({ tool = "rg" })

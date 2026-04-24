@@ -3,7 +3,7 @@
     "final_space": true,
     "version": 4,
     "transient_prompt": {
-        "foreground": "#ACB0BE",
+        "foreground": "#7C6F64",
         "template": "\uf105 "
     },
     "blocks": [
@@ -15,7 +15,7 @@
                     "type": "path",
                     "style": "plain",
                     "template": "{{ .Path }} ",
-                    "foreground": "#89B4FA",
+                    "foreground": "#80AA9E",
                     "options": {
                         "style": "folder"
                     }
@@ -23,14 +23,14 @@
                 {
                     "type": "jujutsu",
                     "style": "plain",
-                    "foreground": "#B4BEFE",
+                    "foreground": "#D3869B",
                     "template": "{{ if (glob \".jj\") }}\uf1fa{{ .ChangeID }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }} {{ end }}"
                 },
                 {
                     "type": "git",
                     "alias": "GitMain",
                     "style": "plain",
-                    "foreground": "#B4BEFE",
+                    "foreground": "#D3869B",
                     "template": "{{ if and (glob \".git\") (not (glob \".jj\")) }} {{ .HEAD }} {{ end }}",
                     "options": {
                         "branch_icon": "\ue725 ",
@@ -48,13 +48,14 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#F38BA8",
-                    "template": "{{ if gt .Code 0 }}{{ end }} "
+                    "foreground": "#F2594B",
+                    "template": "{{ if gt .Code 0 }}{{ end }} "
                 },
                 {
                     "type": "executiontime",
                     "style": "plain",
                     "template": "{{ .FormattedMs }} ",
+                    "foreground": "#E9B143",
                     "options": {
                         "threshold": 500,
                         "style": "austin",
@@ -64,7 +65,7 @@
                 {
                     "type": "text",
                     "style": "plain",
-                    "foreground": "#ACB0BE",
+                    "foreground": "#7C6F64",
                     "template": "\uf105"
                 }
             ]

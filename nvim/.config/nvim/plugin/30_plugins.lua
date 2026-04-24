@@ -3,7 +3,7 @@ local gh = function(plugin)
 end
 
 vim.pack.add({
-	gh("catppuccin/nvim"),
+	gh("sainnhe/gruvbox-material"),
 	gh("MunifTanjim/nui.nvim"),
 	gh("mason-org/mason.nvim"),
 
@@ -29,9 +29,11 @@ vim.pack.add({
 	gh("shortcuts/no-neck-pain.nvim"),
 	gh("stevearc/overseer.nvim"),
 	gh("folke/snacks.nvim"),
+
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),
 	gh("kokusenz/deltaview.nvim"),
+
 	-- Dadbod
 	gh("kristijanhusak/vim-dadbod-ui"),
 	gh("tpope/vim-dadbod"),
@@ -45,6 +47,14 @@ vim.pack.add({
 	-- 33_notes
 	gh("preservim/vim-pencil"),
 	gh("nvim-orgmode/orgmode"),
+
+	-- 40_completion
+	gh("rafamadriz/friendly-snippets"),
+	gh("L3MON4D3/LuaSnip"),
+	{
+		src = gh("saghen/blink.cmp"),
+		version = vim.version.range("1.10.2"),
+	},
 
 	-- after/ftplugin
 	-- typescript
@@ -81,19 +91,21 @@ local hooks = function(ev)
 		end
 		vim.system({ "make", "install_jsregexp" }, { cwd = ev.data.path })
 	end
+
+	if name == "saghen/blink.cmp" and (kind == "install" or kind == "update") then
+		vim.system({ "cargo", "build", "--release" })
+	end
 end
 vim.api.nvim_create_autocmd("PackChanged", { callback = hooks })
 
 -- Theme
-require("catppuccin").setup({
-	flavor = "mocha",
-	float = {
-		transparent = true,
-		solid = false,
-	},
-	compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
-})
-vim.cmd.colorscheme("catppuccin")
+vim.g.gruvbox_material_enable_italic = false
+vim.g.gruvbox_material_foreground = "mix"
+vim.g.gruvbox_material_background = "hard"
+vim.g.gruvbox_material_float_style = "blend"
+vim.g.gruvbox_material_transparent_background = 2
+vim.g.gruvbox_material_better_performance = 1
+vim.cmd.colorscheme("gruvbox-material")
 
 require("mason").setup()
 

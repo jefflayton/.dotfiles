@@ -50,7 +50,7 @@ vim.diagnostic.config({
 	-- Show signs on top of any other sign, but only for warnings and errors
 	signs = { priority = 9999, severity = { min = "WARN", max = "ERROR" } },
 
-	-- Show all diagnostics as underline (for their messages type `<Leader>ld`)
+	-- Show all diagnostics as underline
 	underline = { severity = { min = "HINT", max = "ERROR" } },
 
 	virtual_lines = false,
@@ -63,11 +63,11 @@ vim.diagnostic.config({
 })
 
 require("vim._core.ui2").enable({
-	enable = true, -- Whether to enable or disable the UI.
-	msg = { -- Options related to the message module.
+	enable = true,
+	msg = {
 		---@type 'cmd'|'msg' Where to place regular messages, either in the
 		---cmdline or in a separate ephemeral message window.
 		target = "cmd",
-		timeout = 4000, -- Time a message is visible in the message window.
+		timeout = 4000,
 	},
 })
