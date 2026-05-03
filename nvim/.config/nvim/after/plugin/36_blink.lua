@@ -21,9 +21,6 @@ end
 require("blink.cmp").setup({
 	snippets = {
 		preset = "luasnip",
-		opts = {
-			friendly_snippets = true,
-		},
 	},
 	cmdline = {
 		completion = {

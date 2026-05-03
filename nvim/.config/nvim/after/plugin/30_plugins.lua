@@ -22,6 +22,9 @@ require("debugprint").setup({
 
 -- Flash
 local flash = require("flash")
+flash.setup({
+	modes = { search = { enabled = true } },
+})
 vim.keymap.set({ "n", "x", "o" }, "zk", function()
 	flash.jump()
 end, { desc = "Flash: Jump" })
@@ -49,26 +52,27 @@ vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc =
 
 -- Git
 require("gitsigns").setup({ current_line_blame = true })
-require("deltaview").setup({
+
+local dv = require("deltaview")
+dv.setup({
 	keyconfig = {
 		-- Global
-		dv_toggle_keybind = "",
-		dm_toggle_keybind = "",
-		d_toggle_keybind = "",
+		dv_toggle_keybind = "<C-d>v",
+		dm_toggle_keybind = "<C-d>m",
+		d_toggle_keybind = "<C-d>u",
 
 		-- In Diff
 		next_hunk = "]c",
 		prev_hunk = "[c",
 		next_diff = "]f",
 		prev_diff = "[f",
-		fzf_toggle = "",
+		fzf_toggle = "alt-;",
 		jump_to_line = "<CR>",
 	},
-	use_nerdfonts = true,
 })
-vim.keymap.set("n", "<c-d>u", "<cmd>Delta<cr>", { desc = "Delta: Open" })
-vim.keymap.set("n", "<c-d>m", "<cmd>DeltaMenu<cr>", { desc = "Delta: Menu" })
-vim.keymap.set("n", "<c-d>v", "<cmd>DeltaView<cr>", { desc = "Delta: View" })
+vim.keymap.del("n", "<leader>dl")
+vim.keymap.del("n", "<leader>dm")
+vim.keymap.del("n", "<leader>da")
 
 -- Dadbod
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })

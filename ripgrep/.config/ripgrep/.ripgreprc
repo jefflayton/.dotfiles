@@ -30,6 +30,9 @@
 --glob=!**/android/*
 --glob=!**/dist/*
 --glob=!**/build/*
+--glob=!**/*lock.json
+--glob=!**/*lock.yaml
+--glob=!**/*.lock
 
 # Because who cares about case!?
 --smart-case
