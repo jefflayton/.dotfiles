@@ -12,15 +12,22 @@
     claude-code-overlay.url = "github:ryoppippi/claude-code-overlay";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     zig-overlay.url = "github:mitchellh/zig-overlay";
+    television = {
+      url = "github:alexpasmantier/television";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixpkgs-bat-0_26_0.url = "github:nixos/nixpkgs/944fb34f0ba1975418248b9d45f901644a2b0743";
   };
 
   outputs =
     {
       nixpkgs,
+      nixpkgs-bat-0_26_0,
       home-manager,
       claude-code-overlay,
       neovim-nightly-overlay,
       zig-overlay,
+      television,
       ...
     }:
     let
@@ -34,6 +41,7 @@
           zig-overlay.overlays.default
         ];
       };
+      pkgs-bat = import nixpkgs-bat-0_26_0 { inherit system; };
     in
     {
       homeConfigurations."jeffreylayton" = home-manager.lib.homeManagerConfiguration {
@@ -42,8 +50,7 @@
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
         modules = [ ./home.nix ];
-        # Optionally use extraSpecialArgs
-        # to pass through arguments to home.nix
+        extraSpecialArgs = { inherit television system; bat = pkgs-bat.bat; };
       };
     };
 }

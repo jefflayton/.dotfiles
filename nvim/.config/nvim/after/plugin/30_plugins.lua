@@ -40,15 +40,12 @@ end, { desc = "Flash: Toggle Search" })
 
 -- No Neck Pain
 require("no-neck-pain").setup({ width = 150 })
+vim.schedule(function()
+	vim.cmd("NoNeckPain")
+end)
 vim.keymap.set("n", "<leader>np", "<cmd>NoNeckPain<cr>", { desc = "NoNeckPain: Toggle" })
 vim.keymap.set("n", "<leader>nl", "<cmd>NoNeckPainToggleLeftSide<cr>", { desc = "NoNeckPain: Toggle Left Side" })
 vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc = "NoNeckPain: Toggle Right Side" })
-
--- Overseer
-require("overseer").setup()
-vim.keymap.set("n", "<leader>or", "<cmd>OverseerRun<cr>", { desc = "Overseer: Run" })
-vim.keymap.set("n", "<leader>oo", "<cmd>OverseerOpen<cr>", { desc = "Overseer: Open" })
-vim.keymap.set("n", "<leader>oc", "<cmd>OverseerClose<cr>", { desc = "Overseer: Close" })
 
 -- Git
 require("gitsigns").setup({ current_line_blame = true })
@@ -100,3 +97,41 @@ require("snacks").setup({
 	statuscolumn = { enabled = false },
 	words = { enabled = false },
 })
+
+local hover_providers = {
+	"hover.providers.diagnostic",
+	"hover.providers.lsp",
+	"hover.providers.dap",
+	"hover.providers.gh",
+	"hover.providers.gh_user",
+	"hover.providers.jira",
+	"hover.providers.fold_preview",
+}
+require("hover").setup({
+	providers = hover_providers,
+
+	preview_opts = {
+		border = "single",
+	},
+	-- Whether the contents of a currently open hover window should be moved
+	-- to a :h preview-window when pressing the hover keymap.
+	preview_window = true,
+	title = false,
+	mouse_providers = hover_providers,
+	mouse_delay = 1000,
+})
+vim.keymap.set("n", "K", function()
+	require("hover").open()
+end, { desc = "hover.nvim (open)" })
+
+vim.keymap.set("n", "gK", function()
+	require("hover").enter()
+end, { desc = "hover.nvim (enter)" })
+
+vim.keymap.set("n", "<C-p>", function()
+	require("hover").switch("previous")
+end, { desc = "hover.nvim (previous source)" })
+
+vim.keymap.set("n", "<C-n>", function()
+	require("hover").switch("next")
+end, { desc = "hover.nvim (next source)" })

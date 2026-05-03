@@ -2,28 +2,13 @@
   "plugins": {
     "LuaSnip": {
       "rev": "a62e1083a3cfe8b6b206e7d3d33a51091df25357",
-      "src": "https://github.com/L3MON4D3/LuaSnip"
-    },
-    "asyncrun.vim": {
-      "rev": "98d3c0fdeb983f0ef62fe3a49da440f6d2c045ce",
-      "src": "https://github.com/skywind3000/asyncrun.vim"
+      "src": "https://github.com/L3MON4D3/LuaSnip",
+      "version": "2.0.0 - 3.0.0"
     },
     "blink.cmp": {
       "rev": "b137f63d89d0285ca76eed12e1923220e0aff8c1",
       "src": "https://github.com/saghen/blink.cmp",
-      "version": "1.10.2 - 1.10.2"
-    },
-    "blink.download": {
-      "rev": "86361b98f3c8317904a08e3bd12cf3cdcbe3e925",
-      "src": "https://github.com/saghen/blink.download"
-    },
-    "blink.indent": {
-      "rev": "9c80820ca77218a8d28e70075d6f44a1609911fe",
-      "src": "https://github.com/saghen/blink.indent"
-    },
-    "blink.pairs": {
-      "rev": "65978aadaf9b7d6cae59c1c51cf2b366b370546e",
-      "src": "https://github.com/saghen/blink.pairs"
+      "version": "1.0.0 - 2.0.0"
     },
     "conform.nvim": {
       "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
@@ -49,10 +34,6 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
-    "gdscript-extended-lsp.nvim": {
-      "rev": "ce2f6a3f2460d2c73a41a5a78b1068c6beab8a65",
-      "src": "https://github.com/teatek/gdscript-extended-lsp.nvim"
-    },
     "gitsigns.nvim": {
       "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
@@ -69,29 +50,13 @@
       "rev": "11d779b26a9ab2b3db8c22c6ac9fb6e8ed4fea79",
       "src": "https://github.com/sainnhe/gruvbox-material"
     },
-    "gruvbox.nvim": {
-      "rev": "154eb5ff5b96d0641307113fa385eaf0d36d9796",
-      "src": "https://github.com/ellisonleao/gruvbox.nvim"
-    },
-    "kanagawa.nvim": {
-      "rev": "8ad3b4cdcc804b332c32db8f9743667e1bb82b99",
-      "src": "https://github.com/rebelot/kanagawa.nvim"
-    },
-    "lazydev.nvim": {
-      "rev": "5231c62aa83c2f8dc8e7ba957aa77098cda1257d",
-      "src": "https://github.com/folke/lazydev.nvim"
-    },
-    "markview.nvim": {
-      "rev": "918f3f92e87d28a487af89912d774521a52f9888",
-      "src": "https://github.com/OXY2DEV/markview.nvim"
+    "hover.nvim": {
+      "rev": "e73c00da3a9c87a21d2a8ddf7ab4a39824bd5d56",
+      "src": "https://github.com/lewis6991/hover.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
-    },
-    "neorg": {
-      "rev": "f81b9d2c770b92d9bd28c85975da7d301da33882",
-      "src": "https://github.com/nvim-neorg/neorg"
     },
     "no-neck-pain.nvim": {
       "rev": "4bc52782524fd50c5658685d584df6fa48fe49f9",
@@ -101,17 +66,9 @@
       "rev": "de740991c12411b663994b2860f1a4fd0937c130",
       "src": "https://github.com/MunifTanjim/nui.nvim"
     },
-    "nvim": {
-      "rev": "beaf41a30c26fd7d6c386d383155cbd65dd554cd",
-      "src": "https://github.com/catppuccin/nvim"
-    },
     "nvim-dap": {
       "rev": "e47878dcf1ccc30136b30d19ab19fe76946d61cd",
       "src": "https://github.com/mfussenegger/nvim-dap"
-    },
-    "nvim-java": {
-      "rev": "d196b25eda89ae957110f2966d1753889dc197b2",
-      "src": "https://github.com/nvim-java/nvim-java"
     },
     "nvim-lint": {
       "rev": "b3292aac30b935d4cccf0904053d1c7930df8a20",
@@ -149,15 +106,6 @@
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim"
     },
-    "sonokai": {
-      "rev": "b023c5280b16fe2366f5e779d8d2756b3e5ee9c3",
-      "src": "https://github.com/sainnhe/sonokai"
-    },
-    "spring-boot.nvim": {
-      "rev": "218c0c26c14d99feca778e4d13f5ec3e8b1b60f0",
-      "src": "https://github.com/JavaHello/spring-boot.nvim",
-      "version": "'218c0c26c14d99feca778e4d13f5ec3e8b1b60f0'"
-    },
     "vim-dadbod": {
       "rev": "6d1d41da4873a445c5605f2005ad2c68c99d8770",
       "src": "https://github.com/tpope/vim-dadbod"
@@ -173,10 +121,6 @@
     "vim-dotenv": {
       "rev": "5c51cfcf8d87280d6414e03cd6b253eb70ecb800",
       "src": "https://github.com/tpope/vim-dotenv"
-    },
-    "vim-godot": {
-      "rev": "2cecd0c83a7b3f012142a584d53a3a51be246c8e",
-      "src": "https://github.com/habamax/vim-godot"
     },
     "vim-pencil": {
       "rev": "6d70438a8886eaf933c38a7a43a61adb0a7815ed",

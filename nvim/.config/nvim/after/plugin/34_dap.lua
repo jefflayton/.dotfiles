@@ -105,13 +105,6 @@ dap.adapters.node = {
 	},
 }
 
-local firefox = vim.fn.exepath("firefox-debug-adapter")
-dap.adapters.firefox = {
-	type = "executable",
-	command = firefox,
-	args = { "${port}" },
-}
-
 dap.configurations.javascript = {
 	{
 		type = "pwa-node",
@@ -227,5 +220,6 @@ dap.configurations.zig = {
 		args = pickArgs,
 		stopOnEntry = false,
 		runInTerminal = false,
+		preLaunchTask = "Zig Build",
 	},
 }

@@ -60,6 +60,8 @@ vim.diagnostic.config({
 	},
 
 	update_in_insert = false,
+
+	float = { border = "single" },
 })
 
 require("vim._core.ui2").enable({

@@ -1,8 +1,8 @@
 [include]
-path = ~/.config/delta/themes/catppuccin.gitconfig
+path = ~/.config/delta/themes/gruvbox-material.gitconfig
 
 [delta]
-features = catppuccin-mocha
+features = gruvbox-material-dark
 navigate = true
 line-numbers = true
 

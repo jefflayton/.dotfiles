@@ -1,4 +1,11 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  bat,
+  television,
+  system,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -39,11 +46,13 @@
     delta
     deno
     duckdb
+    direnv
     fd
     fish
     fzf
     jujutsu
     neovim
+    nix-direnv
     nixfmt
     nodejs
     oh-my-posh
@@ -56,7 +65,7 @@
     tree-sitter
     typst
     zigpkgs."0.16.0"
-    zathura
+    television.packages.${system}.default
     zoxide
   ];
 

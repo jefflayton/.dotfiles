@@ -1,15 +1,6 @@
 local luasnip = require("luasnip")
 luasnip.setup()
 require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
-vim.keymap.set({ "i", "s" }, "<C-e>", function()
-	luasnip.expand()
-end, { desc = "LuaSnip: Expand" })
-vim.keymap.set("i", "<C-J>", function()
-	luasnip.jump(1)
-end, { desc = "LuaSnip: Jump Down" })
-vim.keymap.set("i", "<C-K>", function()
-	luasnip.jump(-1)
-end, { desc = "LuaSnip: Jump Up" })
 
 local function get_mini_icon(ctx)
 	if ctx.source_name == "Path" then
@@ -28,6 +19,12 @@ local function get_mini_icon(ctx)
 end
 
 require("blink.cmp").setup({
+	snippets = {
+		preset = "luasnip",
+		opts = {
+			friendly_snippets = true,
+		},
+	},
 	cmdline = {
 		completion = {
 			menu = { auto_show = true },
@@ -35,7 +32,7 @@ require("blink.cmp").setup({
 		keymap = { preset = "inherit" },
 	},
 	completion = {
-		documentation = { auto_show = false },
+		documentation = { auto_show = false, window = { border = "single" } },
 		menu = {
 			draw = {
 				treesitter = { "lsp" },
@@ -68,8 +65,7 @@ require("blink.cmp").setup({
 		},
 	},
 	keymap = {
-		["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
-		["<C-e>"] = { "hide", "fallback" },
+		["<C-e>"] = { "show", "show_documentation", "hide_documentation" },
 
 		["<Tab>"] = {
 			function(cmp)
@@ -79,10 +75,8 @@ require("blink.cmp").setup({
 					return cmp.select_and_accept()
 				end
 			end,
-			"snippet_forward",
 			"fallback",
 		},
-		["<S-Tab>"] = { "snippet_backward", "fallback" },
 
 		["<Up>"] = { "select_prev", "fallback" },
 		["<Down>"] = { "select_next", "fallback" },
@@ -91,6 +85,9 @@ require("blink.cmp").setup({
 
 		["<C-b>"] = { "scroll_documentation_up", "fallback" },
 		["<C-f>"] = { "scroll_documentation_down", "fallback" },
+
+		["<C-K>"] = { "snippet_forward" },
+		["<C-J>"] = { "snippet_backward" },
 	},
 	sources = {
 		default = { "lsp", "dadbod", "path", "snippets", "buffer" },
@@ -143,6 +140,5 @@ require("blink.cmp").setup({
 	},
 	fuzzy = {
 		implementation = "prefer_rust_with_warning",
-		prebuilt_binaries = { force_version = "1.10.2" },
 	},
 })

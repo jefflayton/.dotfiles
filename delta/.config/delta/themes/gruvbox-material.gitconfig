@@ -1,0 +1,30 @@
+[delta "gruvbox-material-dark"]
+	blame-palette = "#1d2021 #282828 #32302f #3c3836 #504945"
+	commit-decoration-style = "#665c54" bold box ul
+	dark = true
+	file-decoration-style = "#665c54"
+	file-style = "#e2cca9"
+	hunk-header-decoration-style = "#665c54" box ul
+	hunk-header-file-style = bold
+	hunk-header-line-number-style = bold "#a89984"
+	hunk-header-style = file line-number syntax
+	line-numbers-left-style = "#665c54"
+	line-numbers-minus-style = bold "#f2594b"
+	line-numbers-plus-style = bold "#b0b846"
+	line-numbers-right-style = "#665c54"
+	line-numbers-zero-style = "#665c54"
+	# 35% red (#f2594b) 65% bg0 (#1d2021)
+	minus-emph-style = bold syntax "#683430"
+	# 20% red (#f2594b) 80% bg0 (#1d2021)
+	minus-style = syntax "#482b29"
+	# 35% green (#b0b846) 65% bg0 (#1d2021)
+	plus-emph-style = bold syntax "#50552e"
+	# 20% green (#b0b846) 80% bg0 (#1d2021)
+	plus-style = syntax "#3a3e28"
+	map-styles = \
+		bold purple => syntax "#5d444c", \
+		bold blue => syntax "#40504d", \
+		bold cyan => syntax "#445642", \
+		bold yellow => syntax "#64532d"
+	# Should match the name of the bat theme
+	syntax-theme = gruvbox-dark

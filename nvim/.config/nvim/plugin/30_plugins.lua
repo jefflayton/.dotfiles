@@ -12,11 +12,6 @@ vim.pack.add({
 	gh("nvim-treesitter/nvim-treesitter"),
 	gh("windwp/nvim-ts-autotag"),
 
-	-- 33_dap
-	gh("mfussenegger/nvim-dap"),
-	gh("jbyuki/one-small-step-for-vimkind"),
-	gh("miroshQa/debugmaster.nvim"),
-
 	-- 51_godot
 	gh("Mathijs-Bakker/godotdev.nvim"),
 
@@ -27,8 +22,8 @@ vim.pack.add({
 	gh("andrewferrier/debugprint.nvim"),
 	gh("folke/flash.nvim"),
 	gh("shortcuts/no-neck-pain.nvim"),
-	gh("stevearc/overseer.nvim"),
 	gh("folke/snacks.nvim"),
+	gh("lewis6991/hover.nvim"),
 
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),
@@ -47,13 +42,21 @@ vim.pack.add({
 	-- 33_notes
 	gh("preservim/vim-pencil"),
 	gh("nvim-orgmode/orgmode"),
-
+	-- 34_dap
+	gh("mfussenegger/nvim-dap"),
+	gh("jbyuki/one-small-step-for-vimkind"),
+	gh("miroshQa/debugmaster.nvim"),
+	-- 35_overseer
+	gh("stevearc/overseer.nvim"),
 	-- 40_completion
 	gh("rafamadriz/friendly-snippets"),
-	gh("L3MON4D3/LuaSnip"),
+	{
+		src = gh("L3MON4D3/LuaSnip"),
+		version = vim.version.range("2.*"),
+	},
 	{
 		src = gh("saghen/blink.cmp"),
-		version = vim.version.range("1.10.2"),
+		version = vim.version.range("1.*"),
 	},
 
 	-- after/ftplugin

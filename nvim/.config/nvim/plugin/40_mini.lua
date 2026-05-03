@@ -83,6 +83,8 @@ require("mini.clue").setup({
 		{ mode = "n", keys = "<C-d>" },
 		-- Grug
 		{ mode = "n", keys = "<C-r>" },
+		-- LuaSnip
+		{ mode = { "i", "s" }, keys = "<C-g>" },
 	},
 
 	clues = {
@@ -162,17 +164,6 @@ statusline.setup({
 				return ft
 			end
 			local filetype = get_filetype_with_icon()
-
-			local dmode_enabled = require("debugmaster.debug.mode").is_active()
-
-			local dmode = function()
-				if statusline.is_truncated(120) then
-					return "D"
-				end
-				return "DEBUG"
-			end
-			mode = dmode_enabled and dmode() or mode
-			mode_hl = dmode_enabled and "dCursor" or mode_hl
 
 			if #diagnostics > 0 then
 				diagnostics = "│" .. diagnostics
