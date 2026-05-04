@@ -6,7 +6,7 @@
       "version": "2.0.0 - 3.0.0"
     },
     "blink.cmp": {
-      "rev": "b137f63d89d0285ca76eed12e1923220e0aff8c1",
+      "rev": "78336bc89ee5365633bcf754d93df01678b5c08f",
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
@@ -21,10 +21,6 @@
     "debugprint.nvim": {
       "rev": "1f5de64ac5d0d0ca20a1a535e1ab2fe2c7d4359f",
       "src": "https://github.com/andrewferrier/debugprint.nvim"
-    },
-    "deltaview.nvim": {
-      "rev": "70f1d2d25c64f2c70afd4b4f92fd56dc29194899",
-      "src": "https://github.com/kokusenz/deltaview.nvim"
     },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
@@ -53,10 +49,6 @@
     "hover.nvim": {
       "rev": "e73c00da3a9c87a21d2a8ddf7ab4a39824bd5d56",
       "src": "https://github.com/lewis6991/hover.nvim"
-    },
-    "hunk.nvim": {
-      "rev": "c8a8e7b6973576f63e5bf39aa8338d7f37f4dc53",
-      "src": "https://github.com/julienvincent/hunk.nvim"
     },
     "mason.nvim": {
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",

@@ -33,6 +33,7 @@ alias jgf="jj git fetch --bookmark"
 alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
 alias typstw="typst watch --open '/Applications/Zen\ Browser.app/'"
 alias pn="pnpm"
+alias cat="bat"
 
 # Ripgrep
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
@@ -64,5 +65,5 @@ source "$HOME/.cargo/env.fish"
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# Add Direnv
-mise activate fish | source
+# Run Mise
+env MISE_LOG_LEVEL=warn mise activate fish | source

@@ -51,7 +51,30 @@ vim.keymap.set("n", "<leader>nl", "<cmd>NoNeckPainToggleLeftSide<cr>", { desc = 
 vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc = "NoNeckPain: Toggle Right Side" })
 
 -- Git
-require("gitsigns").setup({ current_line_blame = true })
+local gs = require("gitsigns")
+gs.setup({ current_line_blame = true })
+vim.keymap.set("n", "]c", function()
+	if vim.wo.diff then
+		vim.cmd.normal({ "]c", bang = true })
+	else
+		gs.nav_hunk("next")
+	end
+end, { desc = "GitSigns: Next Hunk" })
+
+vim.keymap.set("n", "[c", function()
+	if vim.wo.diff then
+		vim.cmd.normal({ "[c", bang = true })
+	else
+		gs.nav_hunk("prev")
+	end
+end, { desc = "GitSigns: Prev Hunk" })
+vim.keymap.set("n", "<leader>hp", gs.preview_hunk, { desc = "GitSigns: Preview Hunk" })
+vim.keymap.set("n", "<leader>hi", gs.preview_hunk_inline, { desc = "GitSigns: Preview Hunk Inline" })
+vim.keymap.set("n", "<leader>hd", gs.diffthis, { desc = "GitSigns: Diff This" })
+vim.keymap.set("n", "<leader>hq", gs.setqflist, { desc = "GitSigns: Set Quick Fix List" })
+vim.keymap.set("n", "<leader>hQ", function()
+	gs.setqflist("all")
+end, { desc = "GitSigns: Set Quick Fix List, All" })
 
 -- Dadbod
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
@@ -67,7 +90,7 @@ require("snacks").setup({
 	},
 
 	-- Disabled
-	bigfile = { enabled = false },
+	bigfile = { enabled = true },
 	dashboard = { enabled = false },
 	explorer = { enabled = false },
 	indent = { enabled = false },

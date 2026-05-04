@@ -2,6 +2,7 @@ local gh = function(plugin)
 	return "https://github.com/" .. plugin
 end
 
+vim.cmd("packadd nvim.undotree")
 vim.pack.add({
 	gh("sainnhe/gruvbox-material"),
 	gh("MunifTanjim/nui.nvim"),

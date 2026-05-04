@@ -68,11 +68,11 @@ vim.lsp.enable({
 	"svelte",
 	"tailwindcss",
 	"tinymist",
-	"ts_ls",
+	"tsgo",
 	"zls",
 })
 
-local ts_servers = { "ts_ls", "denols" }
+local ts_servers = { "tsgo", "denols" }
 local function format_ts_diagnostic(diagnostic)
 	if diagnostic.message and vim.fn.exists("*PrettyTsFormat") == 1 then
 		local formatted = vim.fn.PrettyTsFormat(diagnostic.message)

@@ -4,6 +4,7 @@ path = ~/.gitconfig.local
 [core]
 editor = nvim
 pager = delta
+excludesFile = ~/.gitignore.global
 
 [interactive]
 diffFilter = delta --color-only
@@ -12,4 +13,4 @@ diffFilter = delta --color-only
 path = ~/.config/delta/delta.gitconfig
 
 [exclude]
-path = ~/.config/git/.gitignore.global
+path = ~/.gitignore.global

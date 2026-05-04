@@ -1,7 +1,13 @@
 .DS_Store
+.env
+local.settings.json
 .nvim.lua
 .zig-cache
 zig-out
 zig-pkg
+.nvim.lua
+.vscode
+.zed
+node_modules
 .mise.local.toml
 mise.local.toml

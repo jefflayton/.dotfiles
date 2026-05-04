@@ -1,16 +1,20 @@
 **/.DS_Store
 
-jj/dot-cdonfig/jj/conf.d
-jj/dot-cdonfig/jj/repos
+jj/dot-config/jj/conf.d
+jj/dot-config/jj/repos
+git/dot-config/.gitignore.global.local
 
 # Fish config
 # Ignore generated/plugin files by default
-fish/dot-cdonfig/fish/completions/
-fish/dot-cdonfig/fish/conf.d/
-fish/dot-cdonfig/fish/functions/
-fish/dot-cdonfig/fish/themes/
-fish/dot-cdonfig/fish/fish_variables
+fish/dot-config/fish/completions/
+fish/dot-config/fish/conf.d/
+fish/dot-config/fish/functions/
+fish/dot-config/fish/themes/
+fish/dot-config/fish/fish_variables
 
 # Allow hand-written config
-!fish/dot-cdonfig/fish/config.fish
-!fish/dot-cdonfig/fish/fish_plugins
+!fish/dot-config/fish/config.fish
+!fish/dot-config/fish/fish_plugins
+
+!mise/dot-config/mise/config.local.toml
+
