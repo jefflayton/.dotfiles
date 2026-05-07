@@ -65,4 +65,4 @@ source "$HOME/.cargo/env.fish"
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # Add Direnv
-direnv hook fish | source
+mise activate fish | source

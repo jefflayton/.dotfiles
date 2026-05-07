@@ -1,16 +1,16 @@
-.DS_Store
+**/.DS_Store
 
-jj/.config/jj/conf.d
-jj/.config/jj/repos
+jj/dot-cdonfig/jj/conf.d
+jj/dot-cdonfig/jj/repos
 
 # Fish config
 # Ignore generated/plugin files by default
-fish/.config/fish/completions/
-fish/.config/fish/conf.d/
-fish/.config/fish/functions/
-fish/.config/fish/themes/
-fish/.config/fish/fish_variables
+fish/dot-cdonfig/fish/completions/
+fish/dot-cdonfig/fish/conf.d/
+fish/dot-cdonfig/fish/functions/
+fish/dot-cdonfig/fish/themes/
+fish/dot-cdonfig/fish/fish_variables
 
 # Allow hand-written config
-!fish/.config/fish/config.fish
-!fish/.config/fish/fish_plugins
+!fish/dot-cdonfig/fish/config.fish
+!fish/dot-cdonfig/fish/fish_plugins

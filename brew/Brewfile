@@ -1,0 +1,4 @@
+brew "fish"
+brew "mise"
+brew "stow"
+brew "supabase/tap/supabase"
