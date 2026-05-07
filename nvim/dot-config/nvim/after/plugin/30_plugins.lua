@@ -53,27 +53,6 @@ vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc =
 -- Git
 require("gitsigns").setup({ current_line_blame = true })
 
-local dv = require("deltaview")
-dv.setup({
-	keyconfig = {
-		-- Global
-		dv_toggle_keybind = "<C-d>v",
-		dm_toggle_keybind = "<C-d>m",
-		d_toggle_keybind = "<C-d>u",
-
-		-- In Diff
-		next_hunk = "]c",
-		prev_hunk = "[c",
-		next_diff = "]f",
-		prev_diff = "[f",
-		fzf_toggle = "alt-;",
-		jump_to_line = "<CR>",
-	},
-})
-vim.keymap.del("n", "<leader>dl")
-vim.keymap.del("n", "<leader>dm")
-vim.keymap.del("n", "<leader>da")
-
 -- Dadbod
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
 vim.keymap.set("n", "<c-b>f", "<cmd>DBUIFindBuffer<cr>", { desc = "DB: Find Buffer" })

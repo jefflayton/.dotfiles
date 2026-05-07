@@ -1,5 +1,29 @@
 "$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
 
 [ui]
+conflict-marker-style = "git"
 pager = "delta"
 diff-formatter = ":git"
+diff-editor = "nvimdiff"
+merge-editor = "nvimdiff"
+
+[merge-tools.nvimdiff]
+program = "nvim"
+diff-args = ["-d", "$left", "$right"]
+diff-invocation-mode = "file-by-file"
+merge-args = [
+  "-f",
+  "-d",
+  "$output",
+  "-M",
+  "$left",
+  "$base",
+  "$right",
+  "-c",
+  "wincmd J",
+  "-c",
+  "set modifiable",
+  "-c",
+  "set write",
+]
+merge-tool-edits-conflict-markers = true

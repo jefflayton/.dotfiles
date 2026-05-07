@@ -27,7 +27,6 @@ vim.pack.add({
 
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),
-	gh("kokusenz/deltaview.nvim"),
 
 	-- Dadbod
 	gh("kristijanhusak/vim-dadbod-ui"),
