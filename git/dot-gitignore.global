@@ -1,3 +1,6 @@
 .nvim.lua
 .zig-cache
 zig-out
+zig-pkg
+.mise.local.toml
+mise.local.toml

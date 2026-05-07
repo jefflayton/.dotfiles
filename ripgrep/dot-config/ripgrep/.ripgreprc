@@ -25,6 +25,7 @@
 # Language Specific
 --glob=!**/node_modules/*
 --glob=!**/.zig-cache/*
+--glob=!**/zig-pkg/*
 # Builds
 --glob=!**/ios/*
 --glob=!**/android/*
