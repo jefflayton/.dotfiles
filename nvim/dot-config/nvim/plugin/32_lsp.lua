@@ -64,6 +64,7 @@ vim.lsp.enable({
 	"ols",
 	"rust_analyzer",
 	"sqls",
+	"sourcekit",
 	"svelte",
 	"tailwindcss",
 	"tinymist",

@@ -82,7 +82,7 @@ require("mini.clue").setup({
 		-- Diff
 		{ mode = "n", keys = "<C-d>" },
 		-- Grug
-		{ mode = "n", keys = "<C-r>" },
+		{ mode = "n", keys = "<C-s>" },
 		-- LuaSnip
 		{ mode = { "i", "s" }, keys = "<C-g>" },
 	},

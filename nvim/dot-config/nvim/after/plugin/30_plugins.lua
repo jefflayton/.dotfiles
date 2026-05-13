@@ -2,12 +2,12 @@ require("rainbow_csv").setup()
 require("grug-far").setup({
 	windowCreationCommand = "aboveleft split",
 })
-vim.keymap.set("n", "<c-r>u", function()
+vim.keymap.set("n", "<c-s>u", function()
 	require("grug-far").open({
 		transient = true,
 	})
 end, { desc = "GrugFar: Open" })
-vim.keymap.set("n", "<c-r>w", function()
+vim.keymap.set("n", "<c-s>w", function()
 	require("grug-far").open({
 		transient = true,
 		visualSelectionUsage = "operate-within-range",
