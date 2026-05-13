@@ -1,3 +1,1 @@
-vim.schedule(function()
-	vim.o.conceallevel = 0
-end)
+vim.opt_local.conceallevel = 0

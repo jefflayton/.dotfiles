@@ -27,6 +27,7 @@ vim.o.smartcase = true
 vim.o.termguicolors = true
 
 vim.o.conceallevel = 0
+vim.g.vim_json_conceal = 0
 
 -- For Deno
 vim.g.markdown_fenced_languages = {
