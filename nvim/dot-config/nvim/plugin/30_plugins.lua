@@ -13,6 +13,9 @@ vim.pack.add({
 	gh("nvim-treesitter/nvim-treesitter"),
 	gh("windwp/nvim-ts-autotag"),
 
+	-- 61_fzf
+	gh("ibhagwan/fzf-lua"),
+
 	-- 51_godot
 	gh("Mathijs-Bakker/godotdev.nvim"),
 
@@ -25,6 +28,7 @@ vim.pack.add({
 	gh("shortcuts/no-neck-pain.nvim"),
 	gh("folke/snacks.nvim"),
 	gh("lewis6991/hover.nvim"),
+	gh("not-manu/filemention.nvim"),
 
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),

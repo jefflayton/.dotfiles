@@ -22,6 +22,10 @@
       "rev": "1f5de64ac5d0d0ca20a1a535e1ab2fe2c7d4359f",
       "src": "https://github.com/andrewferrier/debugprint.nvim"
     },
+    "filemention.nvim": {
+      "rev": "6085f2c226834081638e1e8af1ced32c78eaf8b3",
+      "src": "https://github.com/not-manu/filemention.nvim"
+    },
     "flash.nvim": {
       "rev": "fcea7ff883235d9024dc41e638f164a450c14ca2",
       "src": "https://github.com/folke/flash.nvim"
@@ -29,6 +33,10 @@
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "fzf-lua": {
+      "rev": "71b45a044c4ef6ecb1910880ef642d5a0e1c02e9",
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
       "rev": "abf82a65f185bd54adc0679f74b7d6e1ada690c9",

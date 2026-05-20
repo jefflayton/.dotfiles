@@ -29,7 +29,7 @@ macos-titlebar-style = tabs
 macos-option-as-alt = true
 macos-icon = xray
 auto-update = download
-auto-update-channel = tip
+auto-update-channel = stable
 
 # Shell
 shell-integration = fish

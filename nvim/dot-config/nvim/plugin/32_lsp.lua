@@ -1,40 +1,34 @@
-local extra = require("mini.extra")
+local fzf = require("fzf-lua")
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
-		vim.bo[args.buf].omnifunc = "v:lua.MiniCompletion.completefunc_lsp"
-
 		local nmap = function(keys, func, desc)
 			vim.keymap.set("n", keys, func, { buffer = args.buf, desc = "LSP: " .. desc })
 		end
 
 		nmap("grd", function()
-			extra.pickers.lsp({ scope = "definition" })
+			fzf.lsp_definitions()
 		end, "Goto Definition")
 		nmap("grr", function()
-			extra.pickers.lsp({ scope = "references" })
+			fzf.lsp_references()
 		end, "Goto References")
 		nmap("gri", function()
-			extra.pickers.lsp({ scope = "implementation" })
+			fzf.lsp_implementations()
 		end, "Goto Implementation")
 		nmap("grt", function()
-			extra.pickers.lsp({ scope = "type_definition" })
+			fzf.lsp_typedefs()
 		end, "Type Definition")
 		nmap("grs", function()
-			extra.pickers.lsp({ scope = "document_symbol" })
+			fzf.lsp_document_symbols()
 		end, "Document Symbols")
 		nmap("grw", function()
-			extra.pickers.lsp({ scope = "workspace_symbol" })
+			fzf.lsp_live_workspace_symbols()
 		end, "Workspace Symbols")
 		nmap("grf", function()
-			extra.pickers.diagnostic({
-				scope = "all",
-			})
-		end, "All Diagnostics")
+			fzf.diagnostics_workspace()
+		end, "Workspace Diagnostics")
 		nmap("grD", function()
-			extra.pickers.diagnostic({
-				scope = "current",
-			})
+			fzf.diagnostics_buffer()
 		end, "Diagnostics")
 	end,
 })
