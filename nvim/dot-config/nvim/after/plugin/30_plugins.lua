@@ -43,9 +43,6 @@ end, { desc = "Flash: Toggle Search" })
 
 -- No Neck Pain
 require("no-neck-pain").setup({ width = 150 })
-vim.schedule(function()
-	vim.cmd("NoNeckPain")
-end)
 vim.keymap.set("n", "<leader>np", "<cmd>NoNeckPain<cr>", { desc = "NoNeckPain: Toggle" })
 vim.keymap.set("n", "<leader>nl", "<cmd>NoNeckPainToggleLeftSide<cr>", { desc = "NoNeckPain: Toggle Left Side" })
 vim.keymap.set("n", "<leader>nr", "<cmd>NoNeckPainToggleRightSide<cr>", { desc = "NoNeckPain: Toggle Right Side" })

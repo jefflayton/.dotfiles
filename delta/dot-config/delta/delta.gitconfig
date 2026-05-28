@@ -1,10 +1,10 @@
 [include]
-path = ~/.config/delta/themes/gruvbox-material.gitconfig
+path = "~/.config/delta/themes/gruvbox-material.gitconfig"
 
 [delta]
-features = gruvbox-material-dark
+features = "gruvbox-material-dark"
 navigate = true
 line-numbers = true
 
 [merge]
-conflictStyle = zdiff3
+conflictStyle = "zdiff3"

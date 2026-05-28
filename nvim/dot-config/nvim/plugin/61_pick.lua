@@ -1,9 +1,34 @@
 local fzf = require("fzf-lua")
+
+local fd_opts = table.concat({
+	"--hidden", "--no-ignore", "--type f",
+	"--exclude .git",
+	"--exclude .jj",
+	"--exclude node_modules",
+	"--exclude .zig-cache",
+	"--exclude zig-pkg",
+	"--exclude ios",
+	"--exclude android",
+	"--exclude dist",
+	"--exclude build",
+	"--exclude '*.lock'",
+	"--exclude '*lock.json'",
+	"--exclude '*lock.yaml'",
+	"--exclude '*.uid'",
+	"--exclude '*.import'",
+	"--exclude .godot",
+	"--exclude .mono",
+	"--exclude 'godot*.tmp'",
+}, " ")
+
 fzf.setup({
 	winopts = {
 		preview = {
 			default = "bat",
 		},
+	},
+	files = {
+		fd_opts = fd_opts,
 	},
 })
 
