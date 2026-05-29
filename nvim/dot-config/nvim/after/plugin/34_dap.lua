@@ -225,3 +225,20 @@ dap.configurations.zig = {
 		preLaunchTask = "Zig Build",
 	},
 }
+
+-- OCaml
+dap.adapters.earlybird = {
+	type = "executable",
+	command = "earlybird",
+}
+dap.configurations.ocaml = {
+	{
+		name = "OCaml Debug",
+		type = "earlybird",
+		request = "launch",
+		stopOnEntry = true,
+		onlyDebugGlob = "<${workspaceFolder}/**/*>",
+		yieldSteps = 1024,
+		cwd = "${workspaceFolder}",
+	},
+}

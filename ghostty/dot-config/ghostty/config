@@ -44,3 +44,6 @@ desktop-notifications = true
 notify-on-command-finish = unfocused
 notify-on-command-finish-action = notify
 notify-on-command-finish-after = 10s
+
+# Other
+auto-update-channel = tip

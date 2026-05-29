@@ -36,6 +36,7 @@ lint.linters_by_ft = {
 	jsonc = { "jsonlint" },
 	sql = sql_linter,
 	typescript = js_linter,
+	["yaml.github"] = { "actionlint" },
 }
 
 local deno = lint.linters.deno
@@ -92,5 +93,12 @@ lint.linters["postgres-language-server"] = {
 vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufReadPost" }, {
 	callback = function()
 		lint.try_lint()
+	end,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = "*/.github/workflows/*.y*ml",
+	callback = function()
+		vim.bo.filetype = "yaml.github"
 	end,
 })

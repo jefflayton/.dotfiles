@@ -56,6 +56,7 @@ vim.lsp.enable({
 	"postgres_lsp",
 	"jdtls",
 	"jsonls",
+	"ocamllsp",
 	"ols",
 	"oxlint",
 	"rust_analyzer",
@@ -64,8 +65,9 @@ vim.lsp.enable({
 	"svelte",
 	"tailwindcss",
 	"tinymist",
-	"tombi",
+	"taplo",
 	"tsgo",
+	"yamlls",
 	"zls",
 })
 

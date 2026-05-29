@@ -24,6 +24,7 @@ local languages = {
 	"regex",
 	"rust",
 	"sql",
+    "swift",
 	"svelte",
 	"toml",
 	"typescript",
