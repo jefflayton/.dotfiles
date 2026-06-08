@@ -28,8 +28,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			fzf.diagnostics_workspace()
 		end, "Workspace Diagnostics")
 		nmap("grD", function()
-			fzf.diagnostics_buffer()
-		end, "Diagnostics")
+			fzf.diagnostics_document()
+		end, "Buffer Diagnostics")
 	end,
 })
 

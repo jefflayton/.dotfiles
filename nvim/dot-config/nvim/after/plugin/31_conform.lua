@@ -27,8 +27,6 @@ local js_formatter = utils.tool_decider({
 	},
 })
 
-local sql_formatter = { "sqlfluff" }
-
 require("conform").setup({
 	-- format_on_save = {
 	-- 	timeout_ms = 500,
@@ -56,7 +54,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		roc = { "roc" },
 		rust = { "rustfmt" },
-		sql = sql_formatter,
+		sql = { "sqlfluff" },
 		svelte = { "prettier" },
 		toml = { "taplo" },
 		typescript = js_formatter,
@@ -68,6 +66,9 @@ require("conform").setup({
 	formatters = {
 		["clang-format"] = {
 			args = { "-assume-filename", "$FILENAME", "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
+		},
+		["sqlfluff"] = {
+			args = { "format", "-" },
 		},
 	},
 })
