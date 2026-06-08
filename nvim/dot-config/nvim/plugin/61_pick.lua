@@ -27,6 +27,9 @@ fzf.setup({
 			default = "bat",
 		},
 	},
+	fzf_opts = {
+		["--cycle"] = true,
+	},
 	files = {
 		fd_opts = fd_opts,
 	},

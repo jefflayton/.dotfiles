@@ -23,7 +23,7 @@ require("debugprint").setup({
 -- Flash
 local flash = require("flash")
 flash.setup({
-	modes = { search = { enabled = true } },
+	modes = { search = { enabled = false } },
 })
 vim.keymap.set({ "n", "x", "o" }, "zk", function()
 	flash.jump()
