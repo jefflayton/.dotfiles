@@ -2,6 +2,7 @@
 lockfile = true
 
 [tools]
+"aqua:quarylabs/sqruff" = "latest"
 bat = "0.26.0"
 delta = "latest"
 deno = "latest"

@@ -32,7 +32,7 @@ require("conform").setup({
 		if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
 			return
 		end
-		return { timeout_ms = 1500, lsp_fallback = true }
+		return { timeout_ms = 500, lsp_fallback = true }
 	end,
 	formatters_by_ft = {
 		c = { "clang-format" },
@@ -50,7 +50,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		roc = { "roc" },
 		rust = { "rustfmt" },
-		sql = { "sqlfluff" },
+		sql = { "sqruff" },
 		svelte = { "prettier" },
 		toml = { "taplo" },
 		typescript = js_formatter,

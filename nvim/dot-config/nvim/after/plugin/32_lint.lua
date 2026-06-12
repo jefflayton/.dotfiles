@@ -29,7 +29,7 @@ lint.linters_by_ft = {
 	javascript = js_linter,
 	json = { "jsonlint" },
 	jsonc = { "jsonlint" },
-	sql = { "sqlfluff" },
+	sql = { "sqruff" },
 	typescript = js_linter,
 }
 
