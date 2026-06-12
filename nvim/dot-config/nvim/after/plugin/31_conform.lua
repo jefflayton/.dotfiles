@@ -28,15 +28,11 @@ local js_formatter = utils.tool_decider({
 })
 
 require("conform").setup({
-	-- format_on_save = {
-	-- 	timeout_ms = 500,
-	-- 	lsp_format = "fallback",
-	-- },
 	format_on_save = function(bufnr)
 		if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
 			return
 		end
-		return { timeout_ms = 500, lsp_fallback = true }
+		return { timeout_ms = 1500, lsp_fallback = true }
 	end,
 	formatters_by_ft = {
 		c = { "clang-format" },
@@ -60,15 +56,13 @@ require("conform").setup({
 		typescript = js_formatter,
 		typescriptreact = js_formatter,
 		typst = { "typstyle" },
+		xml = { "xmlformatter" },
 		yaml = js_formatter,
 		zig = { "zigfmt" },
 	},
 	formatters = {
 		["clang-format"] = {
 			args = { "-assume-filename", "$FILENAME", "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
-		},
-		["sqlfluff"] = {
-			args = { "format", "-" },
 		},
 	},
 })
