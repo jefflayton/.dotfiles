@@ -33,6 +33,7 @@ auto-update-channel = stable
 
 # Shell
 shell-integration = fish
+shell-integration-features = ssh-env,ssh-terminfo
 working-directory = home
 window-inherit-working-directory = false
 tab-inherit-working-directory = false

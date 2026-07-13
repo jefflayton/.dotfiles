@@ -21,6 +21,9 @@ alias ga="git add"
 alias gcam="git commit -a -m"
 alias gcm="git commit -m"
 
+# GH
+alias gwl="gh run watch $(gh run list --status in_progress --limit 1 --json databaseId -q '.[0].databaseId')"
+
 # Jujutsu
 alias js="jj status"
 alias jd="jj describe"
@@ -37,12 +40,6 @@ alias cat="bat"
 
 # Ripgrep
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
-
-# pnpm 		
-set -gx PNPM_HOME "$HOME/Library/pnpm" 		
-if not string match -q -- $PNPM_HOME $PATH 		
-    set -gx PATH "$PNPM_HOME" $PATH 		
-end
 
 # Ngrok Completions 		
 if command -v ngrok &>/dev/null 		
@@ -67,3 +64,8 @@ source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
 # Run Mise
 env MISE_LOG_LEVEL=warn mise activate fish | source
+
+# Android Studio
+set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
+fish_add_path -U "$ANDROID_HOME/emulator "
+fish_add_path -U "$ANDROID_HOME/platform-tools"

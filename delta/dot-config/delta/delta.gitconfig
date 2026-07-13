@@ -5,6 +5,7 @@ path = "~/.config/delta/themes/gruvbox-material.gitconfig"
 features = "gruvbox-material-dark"
 navigate = true
 line-numbers = true
+side-by-side = true
 
 [merge]
 conflictStyle = "zdiff3"

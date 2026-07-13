@@ -3,7 +3,7 @@ path = ~/.gitconfig.local
 
 [core]
 editor = nvim
-pager = delta
+	pager = delta
 excludesFile = ~/.gitignore.global
 
 [interactive]

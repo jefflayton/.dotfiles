@@ -12,3 +12,5 @@ node_modules
 .mise.local.toml
 mise.local.toml
 mise.local.*.toml
+
+**/.claude/settings.local.json

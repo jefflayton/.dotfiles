@@ -27,6 +27,11 @@ local js_formatter = utils.tool_decider({
 	},
 })
 
+local sql_formatter = utils.tool_decider({
+	{ paths = { "postgres-language-server.jsonc" }, tools = { "postgres-language-server" } },
+	{ tools = { "sqlfluff" } },
+})
+
 require("conform").setup({
 	format_on_save = function(bufnr)
 		if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
@@ -50,7 +55,7 @@ require("conform").setup({
 		lua = { "stylua" },
 		roc = { "roc" },
 		rust = { "rustfmt" },
-		sql = { "sqruff" },
+		sql = sql_formatter,
 		svelte = { "prettier" },
 		toml = { "taplo" },
 		typescript = js_formatter,
@@ -63,6 +68,11 @@ require("conform").setup({
 	formatters = {
 		["clang-format"] = {
 			args = { "-assume-filename", "$FILENAME", "--style", "{BasedOnStyle: llvm, IndentWidth: 4}" },
+		},
+		["postgres-language-server"] = {
+			command = "postgres-language-server",
+			args = { "format", "--write", "$FILENAME" },
+			stdin = false,
 		},
 	},
 })
