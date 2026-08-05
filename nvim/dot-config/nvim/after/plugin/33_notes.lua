@@ -6,3 +6,9 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.cmd("PencilSoft")
 	end,
 })
+
+require("markview").setup({
+	preview = {
+		icon_provider = "internal", -- "mini" or "devicons"
+	},
+})

@@ -91,6 +91,9 @@ dap.adapters["pwa-node"] = {
 		command = js_debug,
 		args = { "${port}" },
 	},
+	options = {
+		initialize_timeout_sec = 20,
+	},
 }
 
 local js_debug_script = vim.fn.expand("$MASON/packages/js-debug-adapter/js-debug/src/dapDebugServer.js")
@@ -146,20 +149,19 @@ dap.configurations.javascript = {
 		name = "Attach: Supabase Edge Runtime",
 		address = "127.0.0.1",
 		port = 8083,
-		cwd = vim.fn.getcwd(),
+		attachSimplePort = 8083,
+		continueOnAttach = true,
+		cwd = "${workspaceFolder}",
 		sourceMaps = true,
-		resolveSourceMapLocations = {
-			"${workspaceFolder}/**",
-			"!**/node_modules/**",
-			"!/var/tmp/sb-compile-edge-runtime/**",
-		},
 		smartStep = true,
 		skipFiles = {
 			"<node_internals>/**",
 			"**/node_modules/**",
 		},
+		-- edge runtime source maps carry paths relative to the compile root,
+		-- so the pattern must be relative too
 		sourceMapPathOverrides = {
-			["file:///home/deno/functions/*"] = "${workspaceFolder}/supabase/functions/*",
+			["functions/*"] = "${workspaceFolder}/supabase/functions/*",
 		},
 	},
 	{

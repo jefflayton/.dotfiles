@@ -61,8 +61,8 @@ function M.strip_archive_subpath(path)
 	return path
 end
 
-function M.insert_package_json(root_files, field, fname)
-	return M.root_markers_with_field(root_files, { "package.json", "package.json5" }, field, fname)
+function M.insert_package_json(root_files, field, fname, match)
+	return M.root_markers_with_field(root_files, { "package.json", "package.json5" }, field, fname, match)
 end
 
 --- Appends `new_names` to `root_files` if `field` is found in any such file in any ancestor of `fname`.
@@ -72,19 +72,32 @@ end
 ---
 --- @param root_files string[] List of root-marker files to append to.
 --- @param new_names string[] Potential root-marker filenames (e.g. `{ 'package.json', 'package.json5' }`) to inspect for the given `field`.
---- @param field string Field to search for in the given `new_names` files.
+--- @param field string|string[] Field(s) to search for in the given `new_names` files.
 --- @param fname string Full path of the current buffer name to start searching upwards from.
-function M.root_markers_with_field(root_files, new_names, field, fname)
+--- @param match? "any"|"all" Whether one field (default) or every field must be present.
+function M.root_markers_with_field(root_files, new_names, field, fname, match)
 	local path = vim.fn.fnamemodify(fname, ":h")
 	local found = vim.fs.find(new_names, { path = path, upward = true })
+	local fields = type(field) == "table" and field or { field }
+	local need_all = match == "all"
 
 	for _, f in ipairs(found or {}) do
-		-- Match the given `field`.
+		local hits, count = {}, 0
 		for line in io.lines(f) do
-			if line:find(field) then
-				root_files[#root_files + 1] = vim.fs.basename(f)
+			for _, pat in ipairs(fields) do
+				if not hits[pat] and line:find(pat) then
+					hits[pat] = true
+					count = count + 1
+				end
+			end
+			if count == #fields or (not need_all and count > 0) then
 				break
 			end
+		end
+
+		local ok = need_all and count == #fields or (not need_all and count > 0)
+		if ok then
+			root_files[#root_files + 1] = vim.fs.basename(f)
 		end
 	end
 

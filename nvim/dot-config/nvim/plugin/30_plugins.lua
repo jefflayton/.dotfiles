@@ -1,6 +1,9 @@
 local gh = function(plugin)
 	return "https://github.com/" .. plugin
 end
+-- local cb = function(plugin)
+-- 	return "https://codeberg.org/" .. plugin
+-- end
 
 vim.cmd("packadd nvim.undotree")
 vim.pack.add({
@@ -45,14 +48,14 @@ vim.pack.add({
 	gh("mfussenegger/nvim-lint"),
 	-- 33_notes
 	gh("preservim/vim-pencil"),
-	gh("nvim-orgmode/orgmode"),
+	gh("OXY2DEV/markview.nvim"),
 	-- 34_dap
 	gh("mfussenegger/nvim-dap"),
 	gh("jbyuki/one-small-step-for-vimkind"),
 	gh("miroshQa/debugmaster.nvim"),
 	-- 35_overseer
 	gh("stevearc/overseer.nvim"),
-	-- 40_completion
+	-- 36_blink
 	gh("rafamadriz/friendly-snippets"),
 	{
 		src = gh("L3MON4D3/LuaSnip"),
@@ -62,6 +65,9 @@ vim.pack.add({
 		src = gh("saghen/blink.cmp"),
 		version = vim.version.range("1.*"),
 	},
+	-- 37_bruno
+	gh("nvim-lua/plenary.nvim"),
+	gh("romek-codes/bruno.nvim"),
 
 	-- after/ftplugin
 	-- typescript

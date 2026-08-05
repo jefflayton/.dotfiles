@@ -48,6 +48,7 @@ vim.lsp.config("*", {
 
 vim.lsp.enable({
 	"basedpyright",
+	"bicep",
 	"clangd",
 	"denols",
 	"harperls",
@@ -56,12 +57,14 @@ vim.lsp.enable({
 	"jdtls",
 	"jsonls",
 	"ols",
+	"oxlint",
 	"rust_analyzer",
 	"sqls",
 	"sourcekit",
 	"svelte",
 	"tailwindcss",
 	"tinymist",
+	"tombi",
 	"tsgo",
 	"zls",
 })

@@ -21,12 +21,9 @@ alias ga="git add"
 alias gcam="git commit -a -m"
 alias gcm="git commit -m"
 
-# GH
-alias gwl="gh run watch $(gh run list --status in_progress --limit 1 --json databaseId -q '.[0].databaseId')"
-
 # Jujutsu
 alias js="jj status"
-alias jd="jj describe"
+# alias jd="jj describe"
 alias jn="jj new"
 alias jr="jj rebase --onto"
 alias jgp="jj git push --bookmark"
@@ -34,18 +31,16 @@ alias jgf="jj git fetch --bookmark"
 
 # Other
 alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"
-alias typstw="typst watch --open '/Applications/Zen\ Browser.app/'"
+alias tw="typst watch --open '/Applications/Zen\ Browser.app/'"
 alias pn="pnpm"
 alias cat="bat"
+alias pc="pre-commit"
 
 # Ripgrep
 set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 
-# Ngrok Completions 		
-if command -v ngrok &>/dev/null 		
-    eval "$(ngrok completion)" 		
-end 		
-    
+# ngrok has no fish completion (emits zsh) — omitted
+
 # bat, used by delta 		
 set --export BAT_CONFIG_DIR "$HOME/.config/bat"
 
@@ -67,5 +62,5 @@ env MISE_LOG_LEVEL=warn mise activate fish | source
 
 # Android Studio
 set -gx ANDROID_HOME "$HOME/Library/Android/sdk"
-fish_add_path -U "$ANDROID_HOME/emulator "
+fish_add_path -U "$ANDROID_HOME/emulator"
 fish_add_path -U "$ANDROID_HOME/platform-tools"

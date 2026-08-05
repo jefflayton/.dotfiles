@@ -2,6 +2,7 @@ local utils = require("utils")
 
 local js_formatter = utils.tool_decider({
 	{ paths = { "deno.json", "deno.jsonc" }, tools = { "deno_fmt" } },
+	{ paths = { ".oxfmtrc.json", ".oxfmtrc.jsonc", "oxfmt.config.ts", "oxfmt.config.mts" }, tools = { "oxfmt" } },
 	{
 		paths = {
 			".prettierrc",
