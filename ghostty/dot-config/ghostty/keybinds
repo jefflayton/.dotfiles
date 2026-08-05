@@ -1,9 +1,6 @@
 # Keybinds
 keybind = shift+super+,=reload_config
 
-# Tabs #
-keybind = ctrl+space>q=toggle_quick_terminal
-
 # Splits (super+alt+s, then hjkl)
 keybind = super+shift+s>h=new_split:left
 keybind = super+shift+s>j=new_split:down
