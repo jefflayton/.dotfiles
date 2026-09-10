@@ -104,21 +104,21 @@ function M.root_markers_with_field(root_files, new_names, field, fname, match)
 	return root_files
 end
 
---- Decides what util to use based on the available configuration paths
+--- Returns a per-buffer picker choosing the tools whose config file is nearest the buffer.
+--- Ties go to the earlier entry; no match falls back to the last entry.
 --- @param tools table[] Array of tool configurations with 'paths' and 'tools' fields
---- @return string[] tool_list The selected tools array
+--- @return fun(bufnr?: integer): string[]
 function M.tool_decider(tools)
-	local startpath = vim.api.nvim_buf_get_name(0)
-	for _, tool in ipairs(tools) do
-		if tool.paths then
-			local wd = M.root_pattern(tool.paths)(startpath)
-			if wd ~= nil then
-				return tool.tools
+	return function(bufnr)
+		local best, best_len = tools[#tools].tools, -1
+		for _, tool in ipairs(tools) do
+			local root = tool.paths and vim.fs.root(bufnr or 0, tool.paths)
+			if root and #root > best_len then
+				best, best_len = tool.tools, #root
 			end
 		end
+		return best
 	end
-
-	return tools[#tools].tools
 end
 
 return M

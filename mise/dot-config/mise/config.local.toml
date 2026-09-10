@@ -3,6 +3,9 @@ dotnet = "10"
 "npm:@ionic/cli" = "latest"
 "github:supabase-community/postgres-language-server" = "latest"
 "npm:firebase-tools" = "latest"
+"npm:azurite" = "latest"
+"npm:eas-cli" = "latest"
+"npm:@typescript/native-preview" = "latest"
 
 # [tools."github:Azure/bicep"]
 # version = "latest"

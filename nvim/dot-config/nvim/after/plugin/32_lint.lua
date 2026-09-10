@@ -2,6 +2,8 @@ local utils = require("utils")
 
 local js_linter = utils.tool_decider({
 	{ paths = { "deno.json", "deno.jsonc" }, tools = { "deno" } },
+	-- oxlint runs via its LSP; marker stays so oxlint projects beat an outer deno.json
+	{ paths = { ".oxlintrc.json", "oxlint.config.ts" }, tools = {} },
 	{
 		paths = {
 			".eslintrc",
@@ -31,12 +33,18 @@ vim.env.ESLINT_D_PPID = vim.fn.getpid()
 local lint = require("lint")
 lint.linters_by_ft = {
 	c = { "clangtidy" },
-	javascript = js_linter,
 	json = { "jsonlint" },
 	jsonc = { "jsonlint" },
-	sql = sql_linter,
-	typescript = js_linter,
 	["yaml.github"] = { "actionlint" },
+}
+
+local dynamic_linters = {
+	javascript = js_linter,
+	markdown = js_linter,
+	sql = sql_linter,
+	toml = js_linter,
+	typescript = js_linter,
+	yaml = js_linter,
 }
 
 local deno = lint.linters.deno
@@ -91,8 +99,9 @@ lint.linters["postgres-language-server"] = {
 }
 
 vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost", "BufReadPost" }, {
-	callback = function()
-		lint.try_lint()
+	callback = function(args)
+		local decide = dynamic_linters[vim.bo[args.buf].filetype]
+		lint.try_lint(decide and decide(args.buf) or nil)
 	end,
 })
 

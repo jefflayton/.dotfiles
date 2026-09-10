@@ -8,7 +8,10 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("markview").setup({
-	preview = {
-		icon_provider = "internal", -- "mini" or "devicons"
-	},
+	experimental = { check_rtp = false },
+	preview = { enable = false, enable_hybrid_mode = false, icon_provider = "mini" },
+	markdown = { enable = true },
+	typst = { enable = true },
 })
+require("markview.extras.checkboxes").setup()
+vim.keymap.set("n", "<leader>ct", "<cmd>CheckboxToggle<cr>", { desc = "Markview: Toggle Checkbox" })

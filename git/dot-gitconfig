@@ -14,3 +14,8 @@ path = ~/.config/delta/delta.gitconfig
 
 [exclude]
 path = ~/.gitignore.global
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

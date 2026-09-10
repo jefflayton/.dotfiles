@@ -79,12 +79,12 @@ return {
 		redhat = { telemetry = { enabled = false } },
 		-- formatting disabled by default in yaml-language-server; enable it
 		yaml = {
-			validate = true,
 			format = { enable = false },
-			schemaStore = { enable = true },
+			schemaStore = { enable = false, url = "" },
 			schemas = {
 				["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
 				["https://json.schemastore.org/github-action.json"] = "/action.{yml,yaml}",
+				["https://json.schemastore.org/dependabot-2.0.json"] = "/.github/dependabot.{yml,yaml}",
 			},
 		},
 	},

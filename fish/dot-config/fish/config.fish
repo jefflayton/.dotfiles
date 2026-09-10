@@ -25,9 +25,10 @@ alias gcm="git commit -m"
 alias js="jj status"
 alias jd="jj describe"
 alias jn="jj new"
-alias jr="jj rebase --onto"
-alias jgp="jj git push --bookmark"
-alias jgf="jj git fetch --bookmark"
+alias jr="jj rebase"
+alias jgp="jj git push"
+alias jgf="jj git fetch"
+alias jb="jj bookmark"
 
 # Other
 alias ngrokh="ngrok http --url=normally-flexible-spider.ngrok-free.app"

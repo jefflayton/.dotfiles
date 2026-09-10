@@ -1,0 +1,6 @@
+#:schema https://pitchfork.jdx.dev/schema.json
+
+[daemons.ollama]
+run = "mise x -- ollama serve"
+ready_http = "http://127.0.0.1:11434"
+retry = 3
