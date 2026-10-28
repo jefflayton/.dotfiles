@@ -1,6 +1,6 @@
 [settings]
 lockfile = true
-idiomatic_version_file_enable_tools = ["npm", "node", "deno"]
+idiomatic_version_file_enable_tools = ["node", "pnpm"]
 
 [tools]
 actionlint = "latest"
@@ -28,7 +28,6 @@ node = "latest"
 "npm:eslint_d" = "latest"
 "npm:jsonlint" = "latest"
 "npm:quicktype" = "latest"
-"npm:typescript" = "rc"
 "npm:typescript-language-server" = "latest"
 "npm:vscode-langservers-extracted" = "4.10.0"
 "npm:yaml-language-server" = "latest"
@@ -51,3 +50,11 @@ zig = "latest"
 zls = "latest"
 zoxide = "latest"
 "npm:azurite" = "latest"
+tmux = "latest"
+"github:tw93/Mole" = "latest"
+fnox = "latest"
+age = "latest"
+"github:jdx/jactionlint" = "latest"
+hk = "latest"
+aube = { version = "latest", workflow = ["release-plz.yml@refs/heads/main", "release.yml@refs/heads/main"] }
+pandoc = "latest"
