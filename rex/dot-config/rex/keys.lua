@@ -27,3 +27,10 @@ rex.bind("resize/shift+h", "pane.resize", { direction = "left", amount = 15 })
 rex.bind("resize/shift+l", "pane.resize", { direction = "right", amount = 15 })
 
 rex.bind("resize/=", "pane.balance")
+
+-- Pane Move
+rex.bind("cmd+shift+m", "client.mode.enter", { name = "move" })
+rex.bind("move/h", "pane.move", { direction = "left" })
+rex.bind("move/j", "pane.move", { direction = "down" })
+rex.bind("move/k", "pane.move", { direction = "up" })
+rex.bind("move/l", "pane.move", { direction = "right" })
