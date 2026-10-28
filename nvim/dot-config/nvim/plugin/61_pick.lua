@@ -11,6 +11,8 @@ local fd_opts = table.concat({
 	"--exclude android",
 	"--exclude dist",
 	"--exclude build",
+	"--exclude .svelte-kit",
+	"--exclude .expo",
 	"--exclude '*.lock'",
 	"--exclude '*lock.json'",
 	"--exclude '*lock.yaml'",
@@ -49,6 +51,10 @@ end, { desc = "fzf: Live Grep" })
 vim.keymap.set("n", "<leader>ht", function()
 	fzf.helptags()
 end, { desc = "fzf: Help Tags" })
-vim.keymap.set("n", "<leader>j", function()
-	fzf.jj_files()
-end, { desc = "fzf: JJ Files" })
+vim.keymap.set("n", "<leader>s", function()
+	if require("fzf-lua.path").is_jj_repo(nil, true) then
+		fzf.jj_files({ cmd = "jj diff --name-only", winopts = { title = " Changed Files (jj) " } })
+	else
+		fzf.git_status()
+	end
+end, { desc = "fzf: Changed Files" })

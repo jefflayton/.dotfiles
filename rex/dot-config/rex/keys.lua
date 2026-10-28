@@ -36,3 +36,9 @@ rex.bind("move/k", "pane.move", { direction = "up" })
 rex.bind("move/l", "pane.move", { direction = "right" })
 
 rex.bind("move/f", "pane.float")
+
+-- Rename
+rex.bind("cmd+ctrl+r", "client.mode.enter", { name = "rename", once = true })
+rex.bind("rename/t", "client.tab.rename")
+rex.bind("rename/s", "session.rename")
+rex.bind("rename/p", "pane.rename")

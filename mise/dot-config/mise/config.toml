@@ -13,7 +13,7 @@ duckdb = "latest"
 fd = "latest"
 fzf = "latest"
 gh = "latest"
-"github:agavra/tuicr" = "latest"
+"github:agavra/tuicr" = "0.28.0"
 "github:neovim/neovim" = "latest"
 "github:ocaml/opam" = "latest"
 "github:vadimcn/vscode-lldb" = "latest"
@@ -56,7 +56,10 @@ pandoc = "latest"
 prek = "latest"
 "npm:powersync" = "latest"
 "npm:@azure/static-web-apps-cli" = "latest"
-aube = { version = "2.8.3", workflow = ["release-plz.yml@refs/heads/main", "release.yml@refs/heads/main"] }
+aube = { version = "2.8.3", workflow = [
+  "release-plz.yml@refs/heads/main",
+  "release.yml@refs/heads/main",
+] }
 jactionlint = "latest"
 ollama = "latest"
 pitchfork = { version = "latest", workflow = "release.yml@refs/heads/main" }

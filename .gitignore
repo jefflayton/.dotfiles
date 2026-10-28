@@ -15,6 +15,9 @@ fish/dot-config/fish/fish_variables
 # Allow hand-written config
 !fish/dot-config/fish/config.fish
 !fish/dot-config/fish/fish_plugins
+!fish/dot-config/fish/functions/jp.fish
+!fish/dot-config/fish/functions/jc.fish
+!fish/dot-config/fish/functions/gwl.fish
 
 !mise/dot-config/mise/config.local.toml
 
