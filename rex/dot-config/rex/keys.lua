@@ -34,3 +34,5 @@ rex.bind("move/h", "pane.move", { direction = "left" })
 rex.bind("move/j", "pane.move", { direction = "down" })
 rex.bind("move/k", "pane.move", { direction = "up" })
 rex.bind("move/l", "pane.move", { direction = "right" })
+
+rex.bind("move/f", "pane.float")
