@@ -15,7 +15,19 @@ vim.o.swapfile = false
 
 vim.o.mouse = "a"
 
--- Sync clipboard with MacOS
+-- Sync clipboard with the local machine over OSC 52 (works through rex/ssh).
+-- Paste reads from the unnamed register since terminals rarely answer OSC 52 queries.
+local function paste()
+  return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+end
+vim.g.clipboard = {
+  name = "OSC 52",
+  copy = {
+    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+  },
+  paste = { ["+"] = paste, ["*"] = paste },
+}
 vim.o.clipboard = "unnamedplus"
 
 -- Case insensitive searching
