@@ -36,6 +36,7 @@ lint.linters_by_ft = {
 	json = { "jsonlint" },
 	jsonc = { "jsonlint" },
 	["yaml.github"] = { "actionlint" },
+	["zig"] = { "zlint" },
 }
 
 local dynamic_linters = {

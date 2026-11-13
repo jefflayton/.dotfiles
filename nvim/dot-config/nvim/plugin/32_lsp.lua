@@ -30,6 +30,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		nmap("grD", function()
 			fzf.diagnostics_document()
 		end, "Buffer Diagnostics")
+
+		-- Inline type/parameter hints
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+		if client and client:supports_method("textDocument/inlayHint") then
+			vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+			nmap("grh", function()
+				local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = args.buf })
+				vim.lsp.inlay_hint.enable(not enabled, { bufnr = args.buf })
+			end, "Toggle Inlay Hints")
+		end
 	end,
 })
 
@@ -65,7 +75,7 @@ vim.lsp.enable({
 	"svelte",
 	"tailwindcss",
 	"tinymist",
-	"taplo",
+	"tombi",
 	"tsgo",
 	"yamlls",
 	"zls",

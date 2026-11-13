@@ -15,19 +15,22 @@ vim.o.swapfile = false
 
 vim.o.mouse = "a"
 
--- Sync clipboard with the local machine over OSC 52 (works through rex/ssh).
+-- Over ssh (e.g. rex remotes), sync clipboard to the local machine via OSC 52.
 -- Paste reads from the unnamed register since terminals rarely answer OSC 52 queries.
-local function paste()
-  return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+-- Locally, leave vim.g.clipboard unset so nvim uses pbcopy/pbpaste.
+if vim.env.SSH_CONNECTION or vim.env.SSH_TTY then
+  local function paste()
+    return { vim.fn.split(vim.fn.getreg(""), "\n"), vim.fn.getregtype("") }
+  end
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = { ["+"] = paste, ["*"] = paste },
+  }
 end
-vim.g.clipboard = {
-  name = "OSC 52",
-  copy = {
-    ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-    ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
-  },
-  paste = { ["+"] = paste, ["*"] = paste },
-}
 vim.o.clipboard = "unnamedplus"
 
 -- Case insensitive searching

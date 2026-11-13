@@ -30,12 +30,15 @@ rex.bind("resize/=", "pane.balance")
 
 -- Pane Move
 rex.bind("cmd+shift+m", "client.mode.enter", { name = "move" })
-rex.bind("move/h", "pane.move", { direction = "left" })
-rex.bind("move/j", "pane.move", { direction = "down" })
-rex.bind("move/k", "pane.move", { direction = "up" })
-rex.bind("move/l", "pane.move", { direction = "right" })
+rex.bind("move/h", "move_pane", { direction = "left" })
+rex.bind("move/j", "move_pane", { direction = "down" })
+rex.bind("move/k", "move_pane", { direction = "up" })
+rex.bind("move/l", "move_pane", { direction = "right" })
 
 rex.bind("move/f", "pane.float")
+
+-- Floating terminal
+rex.bind("cmd+shift+f", "pane.new_floating")
 
 -- Rename
 rex.bind("cmd+ctrl+r", "client.mode.enter", { name = "rename", once = true })

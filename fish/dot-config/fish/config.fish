@@ -74,7 +74,6 @@ fish_add_path -U "$ANDROID_HOME/platform-tools"
 # This section can be safely removed at any time if needed.
 test -r '/Users/jeffreylayton/.opam/opam-init/init.fish' && source '/Users/jeffreylayton/.opam/opam-init/init.fish' > /dev/null 2> /dev/null; or true
 # END opam configuration
-
 # Rex completion
 rex completion fish | source
 
