@@ -5,6 +5,9 @@
 --   * Otherwise the pane is already at that edge of its split, so re-split it
 --     beside the pane it shares a border with: stacked panes become side by
 --     side and side-by-side panes become stacked.
+--
+-- Swaps go through the app's own pane.move (animated). The edge re-split has
+-- no client equivalent, so it uses session.move_block and is instant.
 
 local EPS = 1e-6
 
@@ -154,6 +157,12 @@ rex.action({
 
     local neighbor = best_abutting(cur, all, dir)
     if neighbor then
+      -- Let the app do the swap so it animates. Server-side layout calls
+      -- (swap_blocks / move_block) just snap to the new layout.
+      if ctx.client_id then
+        rex.client.queue("pane.move", { direction = args.direction })
+        return
+      end
       local _, e = rex.session.swap_blocks({ block_id = block_id, other_block_id = neighbor.block_id })
       if e then
         error(e, 0)
