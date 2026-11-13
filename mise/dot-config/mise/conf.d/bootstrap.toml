@@ -1,0 +1,126 @@
+# Machine setup: `mise bootstrap` (preview with `--dry-run`).
+# Replaces GNU stow (dotfile groups below) and brew/Brewfile ([bootstrap.packages]).
+# Tools stay in ../config.toml [tools]; `mise bootstrap` installs them last.
+
+[settings]
+dotfiles.root = "~/dotfiles"
+
+# Every declared group applies unless this list is set. Trim per machine
+# (e.g. in a config.<env>.toml) to skip groups.
+[bootstrap]
+dotfile_groups = [
+  "bat",
+  "delta",
+  "fish",
+  "ghostty",
+  "git",
+  "godot",
+  "jj",
+  "mise",
+  "nvim",
+  "ohmyposh",
+  "pitchfork",
+  "rex",
+  "ripgrep",
+  "tmux",
+  "tuicr",
+]
+
+# --- Dotfiles ---------------------------------------------------------------
+# ~/.config/<app> packages are whole-directory symlinks, the same as stow's
+# folding: files an app creates land in the repo, and .gitignore keeps the
+# generated ones out of git.
+
+[dotfile_groups.bat]
+root = "bat/dot-config/bat"
+target = "~/.config/bat"
+mode = "symlink"
+
+[dotfile_groups.delta]
+root = "delta/dot-config/delta"
+target = "~/.config/delta"
+mode = "symlink"
+
+[dotfile_groups.fish]
+root = "fish/dot-config/fish"
+target = "~/.config/fish"
+mode = "symlink"
+
+[dotfile_groups.ghostty]
+root = "ghostty/dot-config/ghostty"
+target = "~/.config/ghostty"
+mode = "symlink"
+
+[dotfile_groups.jj]
+root = "jj/dot-config/jj"
+target = "~/.config/jj"
+mode = "symlink"
+
+# mise's own config: deployed first, then mise re-reads it.
+[dotfile_groups.mise]
+root = "mise/dot-config/mise"
+target = "~/.config/mise"
+mode = "symlink"
+
+[dotfile_groups.nvim]
+root = "nvim/dot-config/nvim"
+target = "~/.config/nvim"
+mode = "symlink"
+
+[dotfile_groups.ohmyposh]
+root = "ohmyposh/dot-config/ohmyposh"
+target = "~/.config/ohmyposh"
+mode = "symlink"
+
+[dotfile_groups.pitchfork]
+root = "pitchfork/dot-config/pitchfork"
+target = "~/.config/pitchfork"
+mode = "symlink"
+
+[dotfile_groups.rex]
+root = "rex/dot-config/rex"
+target = "~/.config/rex"
+mode = "symlink"
+
+[dotfile_groups.ripgrep]
+root = "ripgrep/dot-config/ripgrep"
+target = "~/.config/ripgrep"
+mode = "symlink"
+
+[dotfile_groups.tmux]
+root = "tmux/dot-config/tmux"
+target = "~/.config/tmux"
+mode = "symlink"
+
+[dotfile_groups.tuicr]
+root = "tuicr/dot-config/tuicr"
+target = "~/.config/tuicr"
+mode = "symlink"
+
+# Files directly in ~: linked one by one, `dot-` renamed to `.` like
+# `stow --dotfiles`. `manifest = "git"` deploys only files git tracks.
+[dotfile_groups.git]
+root = "git"
+dot_prefix = true
+manifest = "git"
+
+[dotfile_groups.godot]
+root = "godot"
+manifest = "git"
+
+# --- Packages (was brew/Brewfile) -------------------------------------------
+# Third-party taps resolve to github.com/<owner>/homebrew-<tap> on their own.
+
+[bootstrap.packages]
+"brew:fish" = "latest"
+"brew:mise" = "latest"
+"brew:neovim" = "latest"
+"brew:supabase/tap/supabase" = "latest"
+"brew:jandedobbeleer/oh-my-posh/oh-my-posh" = "latest"
+"brew:postgresql@15" = "latest"
+"brew-cask:amethyst" = "latest"
+
+# --- Login shell ------------------------------------------------------------
+
+[bootstrap.user]
+login_shell = "fish"

@@ -66,3 +66,4 @@ ollama = "latest"
 pitchfork = { version = "latest", workflow = "release.yml@refs/heads/main" }
 yazi = "latest"
 "github:lgalabru/axel" = "latest"
+opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
