@@ -189,3 +189,34 @@ rex.action({
     end
   end,
 })
+
+-- Pane focus that overflows into tabs.
+--
+-- focus_pane{ direction = "left" | "right" | "up" | "down" }
+--   * Left/right with no pane on that side of the focused tiled pane switch to
+--     the previous/next tab instead.
+--   * Everything else (up/down, floats) is plain pane.focus.
+rex.action({
+  name = "focus_pane",
+  title = "Focus Pane (tab at edge)",
+  category = "Panes",
+  args = { direction = "string" },
+  run = function(ctx, args)
+    local dir = DIRS[args.direction]
+    if not dir then
+      error("direction must be left, right, up, or down", 0)
+    end
+    if dir.axis == "x" and ctx.block_id then
+      local view = rex.session.view({})
+      local layer = view and find_layer(view, ctx.block_id)
+      if layer and layer.kind == "tiled" then
+        local cur = find(layer.layout, ctx.block_id)
+        if not best_abutting(cur, leaves(layer.layout), dir) then
+          rex.client.queue(dir.sign > 0 and "client.tab.next" or "client.tab.previous")
+          return
+        end
+      end
+    end
+    rex.client.queue("pane.focus", { direction = args.direction })
+  end,
+})

@@ -3,4 +3,11 @@
 [daemons.ollama]
 run = "mise x -- ollama serve"
 ready_http = "http://127.0.0.1:11434"
+boot_start = true
 retry = 3
+
+[daemons.ollama.env]
+OLLAMA_KEEP_ALIVE = "5m" # unload the model when idle so dev work gets RAM back
+OLLAMA_FLASH_ATTENTION = "1"
+OLLAMA_KV_CACHE_TYPE = "q8_0" # roughly halves the memory used by context
+OLLAMA_MAX_LOADED_MODELS = "1"

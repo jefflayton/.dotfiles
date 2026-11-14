@@ -1,0 +1,4 @@
+# UI uses named ANSI colors, which the ghostty gruvbox-material palette already supplies.
+[mgr]
+# Code previews use syntect (same engine as bat), so reuse the bat theme.
+syntect_theme = "~/.config/bat/themes/gruvbox-material-dark-mix.tmTheme"

@@ -1,10 +1,10 @@
 rex.bind("cmd+shift+,>cmd+shift+,", "client.config.reload")
 
 -- Pane Focus
-rex.bind("cmd+shift+h", "pane.focus", { direction = "left" })
-rex.bind("cmd+shift+j", "pane.focus", { direction = "down" })
-rex.bind("cmd+shift+k", "pane.focus", { direction = "up" })
-rex.bind("cmd+shift+l", "pane.focus", { direction = "right" })
+rex.bind("cmd+shift+h", "focus_pane", { direction = "left" })
+rex.bind("cmd+shift+j", "focus_pane", { direction = "down" })
+rex.bind("cmd+shift+k", "focus_pane", { direction = "up" })
+rex.bind("cmd+shift+l", "focus_pane", { direction = "right" })
 
 -- Pane Splits
 rex.unbind("cmd+shift+s")
@@ -29,7 +29,8 @@ rex.bind("resize/shift+l", "pane.resize", { direction = "right", amount = 15 })
 rex.bind("resize/=", "pane.balance")
 
 -- Pane Move
-rex.bind("cmd+shift+m", "client.mode.enter", { name = "move" })
+-- cmd+shift+x ("exchange"); cmd+shift+m is the float toggle in floats.lua
+rex.bind("cmd+shift+x", "client.mode.enter", { name = "move" })
 rex.bind("move/h", "move_pane", { direction = "left" })
 rex.bind("move/j", "move_pane", { direction = "down" })
 rex.bind("move/k", "move_pane", { direction = "up" })
@@ -41,7 +42,7 @@ rex.bind("move/f", "pane.float")
 rex.bind("cmd+shift+f", "pane.new_floating")
 
 -- Rename
-rex.bind("cmd+ctrl+r", "client.mode.enter", { name = "rename", once = true })
+rex.bind("cmd+shift+n", "client.mode.enter", { name = "rename", once = true })
 rex.bind("rename/t", "client.tab.rename")
 rex.bind("rename/s", "session.rename")
 rex.bind("rename/p", "pane.rename")

@@ -1,3 +1,4 @@
 require("keys")
 require("move")
-require("yazi")
+require("files")
+require("floats")
