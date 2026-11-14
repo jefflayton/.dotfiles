@@ -19,6 +19,7 @@ fish/dot-config/fish/fish_variables
 !fish/dot-config/fish/functions/jc.fish
 !fish/dot-config/fish/functions/gwl.fish
 !fish/dot-config/fish/functions/claude-local.fish
+!fish/dot-config/fish/functions/claude-send.fish
 
 !mise/dot-config/mise/config.local.toml
 
