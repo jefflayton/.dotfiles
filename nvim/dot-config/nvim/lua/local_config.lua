@@ -5,14 +5,10 @@ local M = {}
 
 M.CONFIG_FILE_NAMES = { ".nvim.lua" }
 
---- Look for local config file
+--- Look for local config file, searching up from the cwd
+--- (not findfile's ".", which is the current buffer's directory)
 function M.lookup()
-	for _, filename in ipairs(M.CONFIG_FILE_NAMES) do
-		filename = vim.fn.findfile(filename, ".;")
-		if filename ~= "" then
-			return vim.fn.fnamemodify(filename, ":p")
-		end
-	end
+	return vim.fs.find(M.CONFIG_FILE_NAMES, { upward = true, path = vim.fn.getcwd() })[1]
 end
 
 --- Find & load local config file

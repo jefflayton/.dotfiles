@@ -10,10 +10,6 @@
       "src": "https://github.com/saghen/blink.cmp",
       "version": "1.0.0 - 2.0.0"
     },
-    "bruno.nvim": {
-      "rev": "54bdebc62aa6ffc7906464a20d182c0a660be836",
-      "src": "https://github.com/romek-codes/bruno.nvim"
-    },
     "conform.nvim": {
       "rev": "016802de402556da54c36bd7359b441266b01cdd",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -25,10 +21,6 @@
     "debugprint.nvim": {
       "rev": "957093d8b695aa4cc18c18f421ef0cb6c7380c59",
       "src": "https://github.com/andrewferrier/debugprint.nvim"
-    },
-    "filemention.nvim": {
-      "rev": "d8aa9116fa441d0529c53bb5cb2c321f30d9544d",
-      "src": "https://github.com/not-manu/filemention.nvim"
     },
     "flash.nvim": {
       "rev": "5f0f270fdc7c5b0c21d903ee85b9cb06f2ac636a",
@@ -46,10 +38,6 @@
       "rev": "dc7698f932792a764d3db95fedee26c38e728355",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
-    "godotdev.nvim": {
-      "rev": "ccac07c5b18ccbe0c3f90d06129cd17f08e4ac04",
-      "src": "https://github.com/Mathijs-Bakker/godotdev.nvim"
-    },
     "grug-far.nvim": {
       "rev": "91b7e58b6ffc6ddad5acb7a7c1df21257724449e",
       "src": "https://github.com/MagicDuck/grug-far.nvim"
@@ -66,17 +54,9 @@
       "rev": "aadb6d817577d553bbef61e8b9073f1bf4b87e08",
       "src": "https://github.com/OXY2DEV/markview.nvim"
     },
-    "mason.nvim": {
-      "rev": "2a6940af80375532e5e9e7c1f2fc6319a1b7a69d",
-      "src": "https://github.com/mason-org/mason.nvim"
-    },
     "no-neck-pain.nvim": {
       "rev": "83ed5249cfdfc5790ab2c05f96038eeca7dd9451",
       "src": "https://github.com/shortcuts/no-neck-pain.nvim"
-    },
-    "nui.nvim": {
-      "rev": "10fc361835c856ba4233ef5ea135b919bf3dce97",
-      "src": "https://github.com/MunifTanjim/nui.nvim"
     },
     "nvim-dap": {
       "rev": "cfa2d58f4537aca6ca83e2de1a0d9f1491121264",
@@ -85,10 +65,6 @@
     "nvim-lint": {
       "rev": "52107ce2076a27a285af781248e2c59bad817cd0",
       "src": "https://github.com/mfussenegger/nvim-lint"
-    },
-    "nvim-pretty-ts-errors": {
-      "rev": "b5d8e0798884323ebbf587c54ebfa128c87f9c19",
-      "src": "https://github.com/enochchau/nvim-pretty-ts-errors"
     },
     "nvim-treesitter": {
       "rev": "04f17886f75416dfdc25374c950a52c63f0e98fe",
@@ -101,18 +77,6 @@
     "one-small-step-for-vimkind": {
       "rev": "1af6ffb9b5229a856e8090fa2f690e0931a5aace",
       "src": "https://github.com/jbyuki/one-small-step-for-vimkind"
-    },
-    "orgmode": {
-      "rev": "08c3ea6ca3745d49435378cddfa93d06e0b39574",
-      "src": "https://github.com/nvim-orgmode/orgmode"
-    },
-    "overseer.nvim": {
-      "rev": "a93d9f6d6defdac4bcd6d2c8ba988650e42e0a0e",
-      "src": "https://github.com/stevearc/overseer.nvim"
-    },
-    "plenary.nvim": {
-      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
-      "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow_csv.nvim": {
       "rev": "26de78d8324f7ac6a3e478319d1eb1f17123eb5b",

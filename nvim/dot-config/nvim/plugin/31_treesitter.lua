@@ -8,10 +8,8 @@ local languages = {
 	"css",
 	"dockerfile",
 	"fish",
-	"gdscript",
 	"html",
 	"http",
-	"java",
 	"javascript",
 	"jsdoc",
 	"json",
@@ -35,8 +33,9 @@ local languages = {
 	"zig",
 }
 
+-- Look for the parser file instead of loading the parser: much faster at startup.
 local not_installed = function(lang)
-	return not pcall(vim.treesitter.language.inspect, lang)
+	return #vim.api.nvim_get_runtime_file("parser/" .. lang .. ".*", false) == 0
 end
 
 local to_install = vim.tbl_filter(not_installed, languages)

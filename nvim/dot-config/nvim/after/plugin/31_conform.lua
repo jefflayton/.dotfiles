@@ -38,14 +38,12 @@ require("conform").setup({
 		if vim.b[bufnr].disable_autoformat or vim.g.disable_autoformat then
 			return
 		end
-		return { timeout_ms = 500, lsp_fallback = true }
+		return { timeout_ms = 500, lsp_format = "fallback" }
 	end,
 	formatters_by_ft = {
 		c = { "clang-format" },
 		css = js_formatter,
-		gdscript = { "gdscript-formatter" },
 		html = js_formatter,
-		java = { "google-java-format" },
 		javascript = js_formatter,
 		javascriptreact = js_formatter,
 		json = js_formatter,

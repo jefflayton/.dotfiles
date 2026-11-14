@@ -82,23 +82,10 @@ vim.api.nvim_set_hl(0, "dCursor", { bg = "#a6e3a1", fg = "#1e1e2e" })
 local dap = require("dap")
 
 -- JavaScript/TypeScript
-local js_debug = vim.fn.exepath("js-debug-adapter")
+-- Installed by mise: "github:microsoft/vscode-js-debug"
+local js_debug_script =
+	vim.fn.expand("~/.local/share/mise/installs/github-microsoft-vscode-js-debug/latest/src/dapDebugServer.js")
 dap.adapters["pwa-node"] = {
-	type = "server",
-	host = "localhost",
-	port = "${port}",
-	executable = {
-		command = js_debug,
-		args = { "${port}" },
-	},
-	options = {
-		initialize_timeout_sec = 20,
-	},
-}
-
-local js_debug_script = vim.fn.expand("$MASON/packages/js-debug-adapter/js-debug/src/dapDebugServer.js")
-
-dap.adapters.node = {
 	type = "server",
 	host = "localhost",
 	port = "${port}",
@@ -106,7 +93,11 @@ dap.adapters.node = {
 		command = "node",
 		args = { js_debug_script, "${port}" },
 	},
+	options = {
+		initialize_timeout_sec = 20,
+	},
 }
+dap.adapters.node = dap.adapters["pwa-node"]
 
 dap.configurations.javascript = {
 	{
@@ -222,7 +213,6 @@ dap.configurations.zig = {
 		args = pickArgs,
 		stopOnEntry = false,
 		runInTerminal = false,
-		preLaunchTask = "Zig Build",
 	},
 }
 

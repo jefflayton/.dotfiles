@@ -1,6 +1,3 @@
-local validate = vim.validate
-local nvim_eleven = 1
-
 local M = {}
 
 local function escape_wildcards(path)
@@ -29,14 +26,11 @@ function M.root_pattern(...)
 end
 
 function M.tbl_flatten(t)
-	--- @diagnostic disable-next-line:deprecated
-	return nvim_eleven and vim.iter(t):flatten(math.huge):totable() or vim.tbl_flatten(t)
+	return vim.iter(t):flatten(math.huge):totable()
 end
 
 function M.search_ancestors(startpath, func)
-	if nvim_eleven then
-		validate("func", func, "function")
-	end
+	vim.validate("func", func, "function")
 	if func(startpath) then
 		return startpath
 	end

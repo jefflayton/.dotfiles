@@ -8,7 +8,6 @@ end
 vim.cmd("packadd nvim.undotree")
 vim.pack.add({
 	gh("sainnhe/gruvbox-material"),
-	gh("MunifTanjim/nui.nvim"),
 
 	-- External Configs
 	-- 31_treesitter
@@ -70,23 +69,15 @@ local hooks = function(ev)
 		vim.cmd("TSUpdate")
 	end
 
-	if name == "kristijanhusak/vim-dadbod-ui" and kind == "install" then
-		vim.g.db_ui_use_nerd_fonts = 1
-		vim.g.db_ui_env_variable_url = "DATABASE_URL"
-	end
-
-	if name == "L3MON4D3/LuaSnip" and (kind == "install" or kind == "update") then
-		if not ev.data.active then
-			vim.cmd.packadd("L3MON4D3/LuaSnip")
-		end
+	if name == "LuaSnip" and (kind == "install" or kind == "update") then
 		vim.system({ "make", "install_jsregexp" }, { cwd = ev.data.path })
-	end
-
-	if name == "saghen/blink.cmp" and (kind == "install" or kind == "update") then
-		vim.system({ "cargo", "build", "--release" })
 	end
 end
 vim.api.nvim_create_autocmd("PackChanged", { callback = hooks })
+
+-- Dadbod
+vim.g.db_ui_use_nerd_fonts = 1
+vim.g.db_ui_env_variable_url = "DATABASE_URL"
 
 -- Theme
 vim.g.gruvbox_material_enable_italic = false

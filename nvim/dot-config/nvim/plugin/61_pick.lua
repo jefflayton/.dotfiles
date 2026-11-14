@@ -16,11 +16,6 @@ local fd_opts = table.concat({
 	"--exclude '*.lock'",
 	"--exclude '*lock.json'",
 	"--exclude '*lock.yaml'",
-	"--exclude '*.uid'",
-	"--exclude '*.import'",
-	"--exclude .godot",
-	"--exclude .mono",
-	"--exclude 'godot*.tmp'",
 }, " ")
 
 fzf.setup({

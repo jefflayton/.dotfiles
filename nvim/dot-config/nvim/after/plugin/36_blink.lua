@@ -1,6 +1,5 @@
 local luasnip = require("luasnip")
 luasnip.setup()
-require("luasnip.loaders.from_lua").load({ paths = "~/.config/nvim/snippets/" })
 
 local function get_mini_icon(ctx)
 	if ctx.source_name == "Path" then

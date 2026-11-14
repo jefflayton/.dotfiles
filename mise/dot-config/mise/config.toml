@@ -16,7 +16,9 @@ gh = "latest"
 "github:agavra/tuicr" = "0.28.0"
 "github:neovim/neovim" = "latest"
 "github:ocaml/opam" = "latest"
-"github:vadimcn/vscode-lldb" = "latest"
+"github:vadimcn/vscode-lldb" = { version = "latest", bin_path = "extension/adapter" }
+"github:microsoft/vscode-js-debug" = { version = "latest", asset_pattern = "js-debug-dap-*.tar.gz" }
+"npm:basedpyright" = "latest"
 go = "latest"
 jj = "latest"
 lua-language-server = "latest"

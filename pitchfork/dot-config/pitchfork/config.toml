@@ -11,3 +11,4 @@ OLLAMA_KEEP_ALIVE = "5m" # unload the model when idle so dev work gets RAM back
 OLLAMA_FLASH_ATTENTION = "1"
 OLLAMA_KV_CACHE_TYPE = "q8_0" # roughly halves the memory used by context
 OLLAMA_MAX_LOADED_MODELS = "1"
+OLLAMA_CONTEXT_LENGTH = "32768" # Claude Code's prompt alone overflows the 4096 default
