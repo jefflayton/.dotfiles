@@ -138,5 +138,3 @@ end, { desc = "hover.nvim (previous source)" })
 vim.keymap.set("n", "<C-n>", function()
 	require("hover").switch("next")
 end, { desc = "hover.nvim (next source)" })
-
-require("filemention").setup()

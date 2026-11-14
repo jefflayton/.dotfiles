@@ -9,7 +9,6 @@ vim.cmd("packadd nvim.undotree")
 vim.pack.add({
 	gh("sainnhe/gruvbox-material"),
 	gh("MunifTanjim/nui.nvim"),
-	gh("mason-org/mason.nvim"),
 
 	-- External Configs
 	-- 31_treesitter
@@ -18,9 +17,6 @@ vim.pack.add({
 
 	-- 61_fzf
 	gh("ibhagwan/fzf-lua"),
-
-	-- 51_godot
-	gh("Mathijs-Bakker/godotdev.nvim"),
 
 	-- after/plugin
 	-- 30_plugins
@@ -31,7 +27,6 @@ vim.pack.add({
 	gh("shortcuts/no-neck-pain.nvim"),
 	gh("folke/snacks.nvim"),
 	gh("lewis6991/hover.nvim"),
-	gh("not-manu/filemention.nvim"),
 
 	-- Git
 	gh("lewis6991/gitsigns.nvim"),
@@ -53,8 +48,6 @@ vim.pack.add({
 	gh("mfussenegger/nvim-dap"),
 	gh("jbyuki/one-small-step-for-vimkind"),
 	gh("miroshQa/debugmaster.nvim"),
-	-- 35_overseer
-	gh("stevearc/overseer.nvim"),
 	-- 36_blink
 	gh("rafamadriz/friendly-snippets"),
 	{
@@ -65,16 +58,7 @@ vim.pack.add({
 		src = gh("saghen/blink.cmp"),
 		version = vim.version.range("1.*"),
 	},
-	-- 37_bruno
-	gh("nvim-lua/plenary.nvim"),
-	gh("romek-codes/bruno.nvim"),
-
-	-- after/ftplugin
-	-- typescript
-	gh("enochchau/nvim-pretty-ts-errors"),
 })
-
-vim.keymap.set("n", "<leader>t", require("nvim-pretty-ts-errors").show_line_diagnostics)
 
 -- Execute Plugin Hooks
 local hooks = function(ev)
@@ -84,13 +68,6 @@ local hooks = function(ev)
 			vim.cmd.packadd("nvim-treesitter")
 		end
 		vim.cmd("TSUpdate")
-	end
-
-	if name == "enochchau/nvim-pretty-ts-errors" and (kind == "install" or kind == "update") then
-		if not ev.data.active then
-			vim.cmd.packadd("enochchau/nvim-pretty-ts-errors")
-		end
-		vim.system({ "npm", "install" }, { cwd = ev.data.path })
 	end
 
 	if name == "kristijanhusak/vim-dadbod-ui" and kind == "install" then
@@ -120,7 +97,3 @@ vim.g.gruvbox_material_transparent_background = 2
 vim.g.gruvbox_material_better_performance = 1
 vim.cmd.colorscheme("gruvbox-material")
 
-require("mason").setup()
-
--- Godot
-vim.g.godot_executable = "/Applications/Godot.app/Contents/MacOS/Godot"

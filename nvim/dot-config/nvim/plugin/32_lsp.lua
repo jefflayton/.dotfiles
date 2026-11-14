@@ -61,10 +61,8 @@ vim.lsp.enable({
 	"bicep",
 	"clangd",
 	"denols",
-	"harperls",
 	"luals",
 	"postgres_lsp",
-	"jdtls",
 	"jsonls",
 	"ocamllsp",
 	"ols",
@@ -80,27 +78,3 @@ vim.lsp.enable({
 	"yamlls",
 	"zls",
 })
-
-local ts_servers = { "tsgo", "denols" }
-local function format_ts_diagnostic(diagnostic)
-	if diagnostic.message and vim.fn.exists("*PrettyTsFormat") == 1 then
-		local formatted = vim.fn.PrettyTsFormat(diagnostic.message)
-		if formatted and formatted ~= "" then
-			diagnostic.message = formatted
-		end
-	end
-	return diagnostic
-end
-
-local handler = vim.lsp.handlers["textDocument/publishDiagnostics"]
-vim.lsp.handlers["textDocument/publishDiagnostics"] = function(err, result, ctx, config)
-	local client = vim.lsp.get_client_by_id(ctx.client_id)
-	if client and vim.tbl_contains(ts_servers, client.name) then
-		if result and result.diagnostics then
-			for _, diagnostic in ipairs(result.diagnostics) do
-				format_ts_diagnostic(diagnostic)
-			end
-		end
-	end
-	return handler(err, result, ctx, config)
-end

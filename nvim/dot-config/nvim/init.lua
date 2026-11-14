@@ -18,4 +18,3 @@ end
 
 require("utils")
 require("local_config").source()
-require("godot")

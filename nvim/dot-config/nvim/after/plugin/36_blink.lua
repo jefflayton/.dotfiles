@@ -87,7 +87,7 @@ require("blink.cmp").setup({
 		["<C-J>"] = { "snippet_backward" },
 	},
 	sources = {
-		default = { "lsp", "dadbod", "path", "filemention", "snippets", "buffer" },
+		default = { "lsp", "dadbod", "path", "snippets", "buffer" },
 		providers = {
 			dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
 			buffer = {
@@ -132,10 +132,6 @@ require("blink.cmp").setup({
 				name = "Snippets",
 				module = "blink.cmp.sources.snippets",
 				min_keyword_length = 2,
-			},
-			filemention = {
-				name = "filemention",
-				module = "filemention.sources.blink",
 			},
 		},
 	},
