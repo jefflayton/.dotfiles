@@ -67,3 +67,5 @@ pitchfork = { version = "latest", workflow = "release.yml@refs/heads/main" }
 yazi = "latest"
 "github:lgalabru/axel" = "latest"
 opencode = { version = "latest", allow_builds = ["@opencode/cli"] }
+oh-my-posh = "latest"
+nushell = "latest"

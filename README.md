@@ -36,8 +36,19 @@ Untested shortcut for steps 2–3:
 | remove a package's links | `mise dot unapply --group <pkg>` |
 | install declared packages | `mise bootstrap packages apply` |
 | add a Homebrew package | `mise bootstrap packages use -g brew:<name>` |
+| add a package to this machine only | `localpkg <formula>` or `localpkg brew-cask:<name>` (`-n` previews) |
+| add a tool to this machine only | `mise use -p ~/.config/mise/config.local.toml <tool>` |
 | find undeclared Homebrew packages | `mise bootstrap packages prune --manager brew --dry-run` |
 | see what differs | `mise dot status`, `mise dot diff`, `mise bootstrap status` |
+| add an alias for both shells | `fish/dot-config/fish/aliases.fish`; nu picks it up on its next start |
+
+## Shells
+
+fish is the login shell. Run `nu` from fish to switch, and `exit` to go back.
+
+- nu inherits fish's environment, and sets up mise, zoxide and oh-my-posh itself (`nushell/dot-config/nushell/env.nu`, regenerated on each start).
+- Every fish alias (`aliases.fish`) and function (`functions/*.fish`) is also a nu command that runs it in `fish --no-config` (about 10–40ms). Names nu has built in, like `ls` and `open`, stay nu's.
+- These run in a fish subprocess, so one that changes directory or sets variables can't change nu's. `nvim` has a native nu version in `config.nu` for that reason. Give any other such function one too.
 
 ## Notes
 
@@ -56,6 +67,7 @@ Per-machine settings (work orgs, hosts, tokens) never go in this public repo. Ea
 | jj | `~/.config/jj/conf.d/local.toml` (any `*.toml` there) |
 | mise | `~/.config/mise/config.local.toml` |
 | fish | `~/.config/fish/conf.d/local.fish` (any `*.fish` there) |
+| nushell | `~/.config/nushell/local.nu` |
 | ghostty | `~/.config/ghostty/config.local` |
 | tmux | `~/.config/tmux/local.conf` |
 | nvim | `~/.config/nvim/after/plugin/local.lua` (nvim runs it after the other plugin files) |

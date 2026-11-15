@@ -17,6 +17,7 @@ dotfile_groups = [
   "godot",
   "jj",
   "mise",
+  "nushell",
   "nvim",
   "ohmyposh",
   "pitchfork",
@@ -61,6 +62,11 @@ mode = "symlink"
 [dotfile_groups.mise]
 root = "mise/dot-config/mise"
 target = "~/.config/mise"
+mode = "symlink"
+
+[dotfile_groups.nushell]
+root = "nushell/dot-config/nushell"
+target = "~/.config/nushell"
 mode = "symlink"
 
 [dotfile_groups.nvim]
@@ -131,7 +137,6 @@ manifest = "git"
 "brew:mise" = "latest"
 "brew:neovim" = "latest"
 "brew:supabase/tap/supabase" = "latest"
-"brew:jandedobbeleer/oh-my-posh/oh-my-posh" = "latest"
 "brew:postgresql@15" = "latest"
 "brew-cask:amethyst" = "latest"
 
