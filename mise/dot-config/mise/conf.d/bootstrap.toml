@@ -138,4 +138,4 @@ manifest = "git"
 # --- Login shell ------------------------------------------------------------
 
 [bootstrap.user]
-login_shell = "fish"
+login_shell = "/opt/homebrew/bin/fish" # mise needs a full path; brew's fish on Apple silicon
