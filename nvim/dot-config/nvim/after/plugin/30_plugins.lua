@@ -73,6 +73,11 @@ vim.keymap.set("n", "<leader>hQ", function()
 	gs.setqflist("all")
 end, { desc = "GitSigns: Set Quick Fix List, All" })
 
+require("octo").setup({ picker = "fzf-lua" })
+vim.keymap.set("n", "<leader>op", "<cmd>Octo pr list<cr>", { desc = "Octo: PR List" })
+vim.keymap.set("n", "<leader>om", "<cmd>Octo search is:pr is:open author:@me<cr>", { desc = "Octo: My PRs" })
+vim.keymap.set("n", "<leader>or","<cmd>Octo review<cr>", { desc = "Octo: Review PR" })
+
 -- Dadbod
 vim.keymap.set("n", "<c-b>u", "<cmd>DBUIToggle<cr>", { desc = "DB: Toggle UI" })
 vim.keymap.set("n", "<c-b>f", "<cmd>DBUIFindBuffer<cr>", { desc = "DB: Find Buffer" })

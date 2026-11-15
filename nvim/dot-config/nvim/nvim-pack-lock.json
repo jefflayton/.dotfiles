@@ -74,9 +74,17 @@
       "rev": "d7220b55e16ed3c04e88086256def5d282429493",
       "src": "https://github.com/windwp/nvim-ts-autotag"
     },
+    "octo.nvim": {
+      "rev": "0ddca04c02aab8ba18d2072f9b855f3806adad54",
+      "src": "https://github.com/pwntester/octo.nvim"
+    },
     "one-small-step-for-vimkind": {
       "rev": "1af6ffb9b5229a856e8090fa2f690e0931a5aace",
       "src": "https://github.com/jbyuki/one-small-step-for-vimkind"
+    },
+    "plenary.nvim": {
+      "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rainbow_csv.nvim": {
       "rev": "26de78d8324f7ac6a3e478319d1eb1f17123eb5b",
