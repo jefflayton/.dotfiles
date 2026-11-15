@@ -24,6 +24,7 @@ dotfile_groups = [
   "ripgrep",
   "tmux",
   "tuicr",
+  "yazi",
 ]
 
 # --- Dotfiles ---------------------------------------------------------------
@@ -97,6 +98,11 @@ root = "tuicr/dot-config/tuicr"
 target = "~/.config/tuicr"
 mode = "symlink"
 
+[dotfile_groups.yazi]
+root = "yazi/dot-config/yazi"
+target = "~/.config/yazi"
+mode = "symlink"
+
 # Files directly in ~: linked one by one, `dot-` renamed to `.` like
 # `stow --dotfiles`. `manifest = "git"` deploys only files git tracks.
 [dotfile_groups.git]
@@ -107,6 +113,15 @@ manifest = "git"
 [dotfile_groups.godot]
 root = "godot"
 manifest = "git"
+
+# ~/.claude holds Claude's own state, so only these paths come from the repo.
+# settings.json is a real file Claude writes to: the shared keys are merged
+# in, and keys only this machine has stay out of the repo. Arrays (hooks,
+# permission lists) are replaced whole by the shared value, not appended.
+[dotfiles]
+"~/.claude/statusline.sh" = { source = "~/dotfiles/claude/dot-claude/statusline.sh", mode = "symlink" }
+"~/.claude/themes" = { source = "~/dotfiles/claude/dot-claude/themes", mode = "symlink" }
+"~/.claude/settings.json/shared" = { source = "~/dotfiles/claude/settings.json", merge = true }
 
 # --- Packages (was brew/Brewfile) -------------------------------------------
 # Third-party taps resolve to github.com/<owner>/homebrew-<tap> on their own.

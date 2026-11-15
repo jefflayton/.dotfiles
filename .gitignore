@@ -21,5 +21,7 @@ fish/dot-config/fish/fish_variables
 !fish/dot-config/fish/functions/claude-local.fish
 !fish/dot-config/fish/functions/claude-send.fish
 
-!mise/dot-config/mise/config.local.toml
-
+# Machine-only config, loaded by each tool's own include (see MIGRATION.md)
+local.*
+*.local
+*.local.*
