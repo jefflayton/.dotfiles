@@ -31,16 +31,16 @@ Your existing stow links point at the same sources, so mise counts them as alrea
 ## New machine
 
 1. Install Homebrew, then `brew install mise git`.
-2. `git clone <this repo> ~/dotfiles`. `dotfiles.root` expects this path.
+2. `git clone <this repo> ~/.dotfiles`. `dotfiles.root` expects this path.
 3. Link mise's config by hand. This is the one bootstrap step mise can't do for itself:
    ```sh
-   mkdir -p ~/.config && ln -s ~/dotfiles/mise/dot-config/mise ~/.config/mise
+   mkdir -p ~/.config && ln -s ~/.dotfiles/mise/dot-config/mise ~/.config/mise
    ```
 4. `cd ~ && mise bootstrap --dry-run`, then `mise bootstrap`. It runs packages, then dotfiles, then the login shell (fish), then tools.
 5. Open a new login session so the shell change takes effect.
 
 Untested shortcut for steps 2–3:
-`mise bootstrap --from <url> --from-dir ~/dotfiles --config-dir mise/dot-config/mise`
+`mise bootstrap --from <url> --from-dir ~/.dotfiles --config-dir mise/dot-config/mise`
 
 ## Day to day
 

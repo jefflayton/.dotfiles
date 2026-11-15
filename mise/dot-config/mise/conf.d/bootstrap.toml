@@ -3,7 +3,7 @@
 # Tools stay in ../config.toml [tools]; `mise bootstrap` installs them last.
 
 [settings]
-dotfiles.root = "~/dotfiles"
+dotfiles.root = "~/.dotfiles"
 
 # Every declared group applies unless this list is set. Trim per machine
 # (e.g. in a config.<env>.toml) to skip groups.
@@ -119,9 +119,9 @@ manifest = "git"
 # in, and keys only this machine has stay out of the repo. Arrays (hooks,
 # permission lists) are replaced whole by the shared value, not appended.
 [dotfiles]
-"~/.claude/statusline.sh" = { source = "~/dotfiles/claude/dot-claude/statusline.sh", mode = "symlink" }
-"~/.claude/themes" = { source = "~/dotfiles/claude/dot-claude/themes", mode = "symlink" }
-"~/.claude/settings.json/shared" = { source = "~/dotfiles/claude/settings.json", merge = true }
+"~/.claude/statusline.sh" = { source = "~/.dotfiles/claude/dot-claude/statusline.sh", mode = "symlink" }
+"~/.claude/themes" = { source = "~/.dotfiles/claude/dot-claude/themes", mode = "symlink" }
+"~/.claude/settings.json/shared" = { source = "~/.dotfiles/claude/settings.json", merge = true }
 
 # --- Packages (was brew/Brewfile) -------------------------------------------
 # Third-party taps resolve to github.com/<owner>/homebrew-<tap> on their own.
