@@ -128,6 +128,8 @@ manifest = "git"
 "~/.claude/statusline.sh" = { source = "~/.dotfiles/claude/dot-claude/statusline.sh", mode = "symlink" }
 "~/.claude/themes" = { source = "~/.dotfiles/claude/dot-claude/themes", mode = "symlink" }
 "~/.claude/settings.json/shared" = { source = "~/.dotfiles/claude/settings.json", merge = true }
+# Built from rex/dot-config/rex/rex-open.js (rebuild command in README).
+"~/Applications/Rex Open.app" = { source = "~/.dotfiles/rex/Rex Open.app", mode = "symlink" }
 
 # --- Packages (was brew/Brewfile) -------------------------------------------
 # Third-party taps resolve to github.com/<owner>/homebrew-<tap> on their own.

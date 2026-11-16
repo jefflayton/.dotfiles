@@ -41,6 +41,7 @@ Untested shortcut for steps 2–3:
 | find undeclared Homebrew packages | `mise bootstrap packages prune --manager brew --dry-run` |
 | see what differs | `mise dot status`, `mise dot diff`, `mise bootstrap status` |
 | add an alias for both shells | `fish/dot-config/fish/aliases.fish`; nu picks it up on its next start |
+| change **Rex Open** (open files from Finder in a Rex nvim tab) | edit `rex/dot-config/rex/rex-open.sh`. Only if the `rex-open.js` stub changes: `osacompile -l JavaScript -o ~/.dotfiles/rex/Rex\ Open.app ~/.config/rex/rex-open.js` and commit the app; `~/Applications` links to it |
 
 ## Shells
 
