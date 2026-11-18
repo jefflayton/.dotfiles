@@ -89,4 +89,6 @@ vim.g.gruvbox_material_float_style = "blend"
 vim.g.gruvbox_material_transparent_background = 2
 vim.g.gruvbox_material_better_performance = 1
 vim.cmd.colorscheme("gruvbox-material")
+-- LSP string tokens (priority 125) paint over treesitter injections
+vim.api.nvim_set_hl(0, "@lsp.type.string", {})
 
