@@ -72,7 +72,7 @@ Per-machine settings (work orgs, hosts, tokens) never go in this public repo. Ea
 | ghostty | `~/.config/ghostty/config.local` |
 | tmux | `~/.config/tmux/local.conf` |
 | nvim | `~/.config/nvim/after/plugin/local.lua` (nvim runs it after the other plugin files) |
-| rex | `~/.config/rex/local.lua` |
+| rex | `~/.config/rex/local/` (any `*.lua` there) |
 | Claude | edit `~/.claude/settings.json` directly. `mise dot apply` overwrites the keys in `claude/settings.json` (arrays such as `hooks` are replaced whole) and keeps every other key. |
 
 bat, ripgrep, yazi and oh-my-posh have no include. If one needs to differ per machine, set it with env vars in `conf.d/local.fish`, or turn its file into a mise template or merge edit. A mise edit needs its group to be `symlink-each`, not `symlink`.

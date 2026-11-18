@@ -3,6 +3,8 @@
 jj/dot-config/jj/conf.d
 jj/dot-config/jj/repos
 git/dot-config/.gitignore.global.local
+rex/dot-config/rex/projects.json
+rex/dot-config/rex/local/
 
 # Fish config
 # Ignore generated/plugin files by default
