@@ -42,7 +42,7 @@ rex.bind("move/f", "pane.float")
 rex.bind("cmd+shift+f", "pane.new_floating")
 
 -- Rename
-rex.bind("cmd+shift+n", "client.mode.enter", { name = "rename", once = true })
+rex.bind("cmd+shift+e", "client.mode.enter", { name = "rename", once = true })
 rex.bind("rename/t", "client.tab.rename")
 rex.bind("rename/s", "session.rename")
 rex.bind("rename/p", "pane.rename")

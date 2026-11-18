@@ -18,9 +18,6 @@ set -gx RIPGREP_CONFIG_PATH "$HOME/.config/ripgrep/.ripgreprc"
 # bat, used by delta 		
 set --export BAT_CONFIG_DIR "$HOME/.config/bat"
 
-## Zoxide
-zoxide init fish | source
-
 # Rust
 source "$HOME/.cargo/env.fish"
 
@@ -28,8 +25,14 @@ source "$HOME/.cargo/env.fish"
 # This won't be added again if you remove it.
 source ~/.orbstack/shell/init2.fish 2>/dev/null || :
 
-# Run Mise
-env MISE_LOG_LEVEL=warn mise activate fish | source
+# mise is activated by Homebrew vendor_conf.d/mise-activate.fish
+# A broken project mise.toml makes hook-env fail; fall back to global tools
+if not string match -q "*/mise/installs/*" $PATH
+    mise env -C ~ -s fish 2>/dev/null | source
+end
+
+## Zoxide
+zoxide init fish | source
 
 ## Initialize Oh My Posh (a mise tool, so after mise activate)
 oh-my-posh init fish --config "$HOME/.config/ohmyposh/config.json" | source

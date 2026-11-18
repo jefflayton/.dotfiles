@@ -31,6 +31,8 @@
 --glob=!**/android/*
 --glob=!**/dist/*
 --glob=!**/build/*
+--glob=!**/.svelte-kit/*
+--glob=!**/.expo/*
 --glob=!**/*lock.json
 --glob=!**/*lock.yaml
 --glob=!**/*.lock

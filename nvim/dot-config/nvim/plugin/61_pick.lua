@@ -1,5 +1,7 @@
 local fzf = require("fzf-lua")
 
+vim.env.RIPGREP_CONFIG_PATH = vim.env.RIPGREP_CONFIG_PATH or vim.fn.expand("~/.config/ripgrep/.ripgreprc")
+
 local fd_opts = table.concat({
 	"--hidden", "--no-ignore", "--type f",
 	"--exclude .git",
