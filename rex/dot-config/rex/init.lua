@@ -3,6 +3,7 @@ require("move")
 require("files")
 require("floats")
 require("prs")
+require("open")
 
 -- Machine-only settings in local.lua (gitignored); a missing file is fine.
 local ok, err = pcall(require, "local")
